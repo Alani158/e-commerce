@@ -1,0 +1,14 @@
+GET http://localhost:5000/api/users/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzQwMzM1MTE3LCJleHAiOjE3NDA5Mzk5MTd9.p6W5Sks5evSzkTEigRhBACPLPqz6XazaKQHEZ_GScKI
+
+
+
+### Create User
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+  "name": "alantestkkdk",
+  "email": "alantekdkst@example.com",
+  "password": "passwordjdkd123kkl"
+}
