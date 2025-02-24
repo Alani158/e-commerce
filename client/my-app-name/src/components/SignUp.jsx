@@ -53,7 +53,7 @@ const SignUp = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
-      <div className="bg-white flex flex-col  min-h-screen min-w-full md:flex-row w-full max-w-4xl shadow-lg rounded-lg overflow-hidden">
+      <div className="bg-white flex flex-col min-h-screen  md:flex-row w-full max-w-4xl shadow-lg rounded-lg overflow-hidden">
         <div className="w-full md:w-1/2 flex justify-center items-center bg-gray-200">
           <img
             src="signup.png"
