@@ -14,7 +14,7 @@ const router = express.Router();
 
 // Get all users (admin use case)
 router.get("/", getUsers);
-router.post("/", createUser);
+router.post("/signup", createUser);
 // Get logged-in user profile (requires authentication)
 router.get("/profile", protect, getUserById);
 // Update user name (check if name exists first)

@@ -4,7 +4,9 @@ import bcrypt from "bcryptjs";
 // Get all users (for admin)
 const getUsers = async (req, res) => {
   try {
-    const [users] = await pool.query("SELECT id, name, email FROM users");
+    const [users] = await pool.query(
+      "SELECT id, name, email, password FROM users"
+    );
     res.json(users);
   } catch (error) {
     console.error("Error getting users:", error);
@@ -142,6 +144,15 @@ const createUser = async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
+    // Validate password: At least 6 characters, 1 capital letter, 1 number
+    if (!/^(?=.*[A-Z])(?=.*\d).{6,}$/.test(password)) {
+      return res.status(400).json({
+        error:
+          "Password must be at least 6 characters long, contain at least one uppercase letter, and one number",
+      });
+    }
+
+    // Check if user already exists
     const [existingUser] = await pool.query(
       "SELECT id FROM users WHERE email = ?",
       [email]
@@ -151,6 +162,7 @@ const createUser = async (req, res) => {
       return res.status(400).json({ error: "User already exists" });
     }
 
+    // Hash password before saving
     const hashedPassword = await bcrypt.hash(password, 10);
     const [result] = await pool.query(
       "INSERT INTO users (name, email, password) VALUES (?, ?, ?)",
