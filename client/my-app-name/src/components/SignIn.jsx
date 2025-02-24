@@ -31,9 +31,9 @@ const SignIn = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
+    <div className="flex items-center justify-center min-h-screen  bg-gray-100 px-4">
       {/* Container */}
-      <div className="bg-white flex flex-col md:flex-row w-full max-w-4xl shadow-lg rounded-lg overflow-hidden">
+      <div className="bg-white  min-h-screen min-w-full flex flex-col md:flex-row w-full max-w-4xl shadow-lg rounded-lg overflow-hidden">
         {/* Left Side - Image Section */}
         <div className="w-full md:w-1/2 flex justify-center items-center bg-gray-200">
           <img
