@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar"; 
+import ImageSlider from "./ImageSlider";
 
 function Full() {
   return (
@@ -27,7 +28,22 @@ function Full() {
 
  </div>
  <Navbar/>
-   </div>
+ <div className="   w-[110vh] mx-auto justify-center p-6">
+      <ImageSlider />
+      <div className="flex">
+        <div>
+      <h2 className="text-3xl font-bold mt-6 text-gray-900">Simply Unique/ </h2>
+      <h2 className="text-3xl font-bold  text-gray-900"> Simply Better.</h2>
+      </div>
+      <p className="text-gray-600 text-center max-w-xl mt-2">
+        <strong>3legant</strong> is a gift & decorations store based in HCMC, Vietnam. Est since 2019.
+      </p>
+    </div>
+    </div>
+
+
+    </div>
+
   );
 }
 
