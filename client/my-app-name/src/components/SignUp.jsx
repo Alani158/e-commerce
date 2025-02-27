@@ -1,8 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import { FaRegEyeSlash } from "react-icons/fa";
 
 const SignUp = () => {
+  const navigate = useNavigate(); // Initialize navigation function
+
+  const handleSignUp = (e) => {
+    e.preventDefault(); // Prevent form from refreshing the page
+    navigate("/"); // Redirect to Full page ("/")
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
       {/* Container */}
@@ -18,44 +25,44 @@ const SignUp = () => {
         </div>
 
         {/* Right Side - Form Section */}
-        <div className=" w-full md:w-1/2 p-8">
-          <h2 className="text-2xl font-semibold text-gray-900">Sign up</h2>
+        <div className="w-full md:w-1/2 p-8">
+          <h2 className="text-2xl font-semibold text-gray-900">Sign Up</h2>
           <p className="text-gray-600 text-sm mt-2">
-          Already have an account?{" "}
-             <Link to="/signin" className="text-green-500 font-medium">Sign In</Link>
-             </p>
+            Already have an account?{" "}
+            <Link to="/signin" className="text-green-500 font-medium">Sign In</Link>
+          </p>
 
-          <form className="mt-6">
+          <form className="mt-6" onSubmit={handleSignUp}>
             {/* Your Name Field */}
             <div className="mt-4">
-            <input type="text" placeholder="Your Name" />
+              <input type="text" placeholder="Your Name" className="w-full px-2 py-2 border rounded-md" required />
               <hr className="mt-2 border-gray-400" />
             </div>
 
             {/* Username Field */}
             <div className="mt-4">
-             <input type="text" placeholder="Username" />
+              <input type="text" placeholder="Username" className="w-full px-2 py-2 border rounded-md" required />
               <hr className="mt-2 border-gray-400" />
             </div>
 
             {/* Email Address Field */}
             <div className="mt-4">
-            <input type="text" placeholder="Email Address" />
+              <input type="email" placeholder="Email Address" className="w-full px-2 py-2 border rounded-md" required />
               <hr className="mt-2 border-gray-400" />
             </div>
 
             {/* Password Field */}
-              <div className="mt-4">
-                <div className="flex">
-                  <input type="text" placeholder="Password" />
-                  <FaRegEyeSlash className=" text-gray-500 relative  sm:left-24 lg:left-44" />
-                </div>
+            <div className="mt-4">
+              <div className="flex items-center">
+                <input type="password" placeholder="Password" className="w-full px-2 py-2 border rounded-md" required />
+                <FaRegEyeSlash className="text-gray-500 ml-2 cursor-pointer" />
+              </div>
               <hr className="mt-2 border-gray-400" />
             </div>
 
             {/* Checkbox */}
             <div className="flex items-center mt-4">
-              <input type="checkbox" className="mr-2" />
+              <input type="checkbox" className="mr-2" required />
               <span className="text-gray-600 text-sm">
                 I agree with <a href="#" className="text-green-500">Privacy Policy</a> and <a href="#" className="text-green-500">Terms of Use</a>
               </span>

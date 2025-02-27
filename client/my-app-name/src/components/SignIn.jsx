@@ -1,8 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import { FaRegEyeSlash } from "react-icons/fa";
 
 const SignIn = () => {
+  const navigate = useNavigate(); // Initialize navigation function
+
+  const handleSignIn = (e) => {
+    e.preventDefault(); // Prevent form from refreshing the page
+    navigate("/"); // Redirect to Full page ("/")
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
       {/* Container */}
@@ -18,27 +25,26 @@ const SignIn = () => {
         </div>
 
         {/* Right Side - Form Section */}
-        <div className="w-full md:w-1/2 p-10 " >
+        <div className="w-full md:w-1/2 p-10">
           <h2 className="text-3xl font-semibold text-gray-900">Sign In</h2>
           <p className="text-gray-600 text-sm mt-2">
             Don't have an account yet?{" "}
             <Link to="/signup" className="text-green-500 font-medium">Sign Up</Link>
           </p>
 
-          <form className="mt-6 space-y-6">
+          <form className="mt-6 space-y-6" onSubmit={handleSignIn}>
             {/* Username Section */}
             <div className="mt-4">
-             <input type="text" placeholder="Your Username or Email  Address "  className="w-72"/>
+              <input type="text" placeholder="Your Username or Email Address" className="w-72" required />
               <hr className="mt-2 border-gray-400" />
             </div>
 
             {/* Password Section */}
-            <div className="mt-6 ">
-                <div className="flex">
-            <input type="text" placeholder="Password"  className="w-72"/>
-             <FaRegEyeSlash className=" text-gray-500 relative  sm:left-10 lg:left-12" />
-                            
-            </div>
+            <div className="mt-6">
+              <div className="flex">
+                <input type="password" placeholder="Password" className="w-72" required />
+                <FaRegEyeSlash className="text-gray-500 relative sm:left-10 lg:left-12" />
+              </div>
               <hr className="mt-2 border-gray-400" />
             </div>
 
