@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
@@ -28,6 +29,18 @@ const SignIn = () => {
     } catch (err) {
       setError(err.response?.data?.error || "Something went wrong.");
     }
+=======
+import React from "react";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { FaRegEyeSlash } from "react-icons/fa";
+
+const SignIn = () => {
+  const navigate = useNavigate(); // Initialize navigation function
+
+  const handleSignIn = (e) => {
+    e.preventDefault(); // Prevent form from refreshing the page
+    navigate("/"); // Redirect to Full page ("/")
+>>>>>>> remi
   };
 
   return (
@@ -44,7 +57,11 @@ const SignIn = () => {
         </div>
 
         {/* Right Side - Form Section */}
+<<<<<<< HEAD
         <div className="w-full md:w-1/2 p-10 ">
+=======
+        <div className="w-full md:w-1/2 p-10">
+>>>>>>> remi
           <h2 className="text-3xl font-semibold text-gray-900">Sign In</h2>
           <p className="text-gray-600 text-sm mt-2">
             Don't have an account yet?{" "}
@@ -53,6 +70,7 @@ const SignIn = () => {
             </Link>
           </p>
 
+<<<<<<< HEAD
           {error && <p className="text-red-500 mt-2">{error}</p>}
 
           <form className="mt-6 space-y-6" onSubmit={handleSubmit}>
@@ -85,6 +103,22 @@ const SignIn = () => {
               >
                 {showPassword ? <FaRegEye /> : <FaRegEyeSlash />}
               </button>
+=======
+          <form className="mt-6 space-y-6" onSubmit={handleSignIn}>
+            {/* Username Section */}
+            <div className="mt-4">
+              <input type="text" placeholder="Your Username or Email Address" className="w-72" required />
+              <hr className="mt-2 border-gray-400" />
+            </div>
+
+            {/* Password Section */}
+            <div className="mt-6">
+              <div className="flex">
+                <input type="password" placeholder="Password" className="w-72" required />
+                <FaRegEyeSlash className="text-gray-500 relative sm:left-10 lg:left-12" />
+              </div>
+              <hr className="mt-2 border-gray-400" />
+>>>>>>> remi
             </div>
 
             {/* Remember Me and Forgot Password */}

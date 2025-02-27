@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
@@ -49,6 +50,18 @@ const SignUp = () => {
     } catch (err) {
       setError(err.response?.data?.error || "Something went wrong.");
     }
+=======
+import React from "react";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
+import { FaRegEyeSlash } from "react-icons/fa";
+
+const SignUp = () => {
+  const navigate = useNavigate(); // Initialize navigation function
+
+  const handleSignUp = (e) => {
+    e.preventDefault(); // Prevent form from refreshing the page
+    navigate("/"); // Redirect to Full page ("/")
+>>>>>>> remi
   };
 
   return (
@@ -62,6 +75,7 @@ const SignUp = () => {
           />
         </div>
 
+<<<<<<< HEAD
         <div className="w-full md:w-1/2 p-8">
           <h2 className="text-2xl font-semibold text-gray-900">Sign up</h2>
           <p className="text-gray-600 text-sm mt-2">
@@ -83,9 +97,25 @@ const SignUp = () => {
                 required
                 className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
               />
+=======
+        {/* Right Side - Form Section */}
+        <div className="w-full md:w-1/2 p-8">
+          <h2 className="text-2xl font-semibold text-gray-900">Sign Up</h2>
+          <p className="text-gray-600 text-sm mt-2">
+            Already have an account?{" "}
+            <Link to="/signin" className="text-green-500 font-medium">Sign In</Link>
+          </p>
+
+          <form className="mt-6" onSubmit={handleSignUp}>
+            {/* Your Name Field */}
+            <div className="mt-4">
+              <input type="text" placeholder="Your Name" className="w-full px-2 py-2 border rounded-md" required />
+              <hr className="mt-2 border-gray-400" />
+>>>>>>> remi
             </div>
 
             <div className="mt-4">
+<<<<<<< HEAD
               <input
                 type="email"
                 placeholder="Email Address"
@@ -114,8 +144,30 @@ const SignUp = () => {
               </button>
             </div>
 
+=======
+              <input type="text" placeholder="Username" className="w-full px-2 py-2 border rounded-md" required />
+              <hr className="mt-2 border-gray-400" />
+            </div>
+
+            {/* Email Address Field */}
+            <div className="mt-4">
+              <input type="email" placeholder="Email Address" className="w-full px-2 py-2 border rounded-md" required />
+              <hr className="mt-2 border-gray-400" />
+            </div>
+
+            {/* Password Field */}
+            <div className="mt-4">
+              <div className="flex items-center">
+                <input type="password" placeholder="Password" className="w-full px-2 py-2 border rounded-md" required />
+                <FaRegEyeSlash className="text-gray-500 ml-2 cursor-pointer" />
+              </div>
+              <hr className="mt-2 border-gray-400" />
+            </div>
+
+            {/* Checkbox */}
+>>>>>>> remi
             <div className="flex items-center mt-4">
-              <input type="checkbox" className="mr-2" />
+              <input type="checkbox" className="mr-2" required />
               <span className="text-gray-600 text-sm">
                 I agree with{" "}
                 <a href="/" className="text-green-500">
