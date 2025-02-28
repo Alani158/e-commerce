@@ -1,10 +1,10 @@
 import React from "react";
-
+import newsletter from "../images/newsletter.png";
 function Newsletter() {
   return (
     <div className="relative w-full h-[300px]">
-      <img 
-        src="newsletter.png" 
+      <img
+        src={newsletter}
         alt="Newsletter Background"
         className="w-full h-full "
       />

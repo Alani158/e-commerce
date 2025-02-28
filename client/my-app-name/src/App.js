@@ -6,6 +6,8 @@ import Full from "./components/Full";
 import SignIn from "./components/SignIn";
 import ShopNow from "./components/ShopNow"; // Import ShopNow Component
 
+import ProductDetails from "./components/productdetails";
+
 function App() {
   return (
     <Router>
@@ -22,7 +24,9 @@ function App() {
         <Route path="/navbar" element={<Navbar />} />
         <Route path="/full" element={<Full />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/shopnow" element={<ShopNow />} /> {/* Fixing the ShopNow route */}
+        <Route path="/shopnow" element={<ShopNow />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+        {/* Fixing the ShopNow route */}
       </Routes>
     </Router>
   );
