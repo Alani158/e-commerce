@@ -23,6 +23,28 @@ const ProductDetails = () => {
     setVal(val - 1);
   };
 
+  const handleAddToCart = () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingProductIndex = cart.findIndex(
+      (item) => item.productId === product.id
+    );
+
+    if (existingProductIndex !== -1) {
+      cart[existingProductIndex].quantity += val;
+    } else {
+      cart.push({
+        productId: product.id,
+        quantity: val,
+        name: product.name,
+        img: product.image,
+        price: product.price,
+      });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Product added to cart");
+  };
+
   if (!product) {
     return <div className="text-center text-red-500">Product not found</div>;
   }
@@ -141,7 +163,10 @@ const ProductDetails = () => {
               <button className="">wishlist</button>
             </div>
           </div>
-          <div className="w-full mt-6 bg-black  justify-self-center flex justify-center items-center border-2 border-black rounded-lg cursor-pointer">
+          <div
+            className="w-full mt-6 bg-black  justify-self-center flex justify-center items-center border-2 border-black rounded-lg cursor-pointer"
+            onClick={handleAddToCart}
+          >
             {" "}
             <button className="text-white py-2">Add to Cart</button>
           </div>

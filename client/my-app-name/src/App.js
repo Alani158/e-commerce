@@ -5,8 +5,8 @@ import Navbar from "./components/Navbar";
 import Full from "./components/Full";
 import SignIn from "./components/SignIn";
 import ShopNow from "./components/ShopNow"; // Import ShopNow Component
-
 import ProductDetails from "./components/productdetails";
+import Cart from "./components/Cart"; // Import Cart Component
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/shopnow" element={<ShopNow />} />
         <Route path="/product/:id" element={<ProductDetails />} />
-        {/* Fixing the ShopNow route */}
+        <Route path="/cart" element={<Cart />} /> {/* Add Cart route */}
       </Routes>
     </Router>
   );
