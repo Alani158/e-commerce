@@ -1,0 +1,27 @@
+run yarn install on both  client and server 
+
+configure your sql db with  these credentials in an env file located on server folder 
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_NAME=ecommerce_db
+JWT_SECRET=yourjwtsecret
+leave the localhost  ,root and DB_NAME as is,change   password   and JWT_SECRET to any string you want
+
+run the sql script for db migration 
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE carts (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  product_id INT NOT NULL,
+  quantity INT NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+that should be all

@@ -4,10 +4,10 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const pool = mysql.createPool({
-  host: process.env.DB_HOST || "localhost",
-  user: process.env.DB_USER || "root",
-  password: process.env.DB_PASSWORD || "Alanicodes",
-  database: process.env.DB_NAME || "ecommerce_db",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
@@ -66,7 +66,8 @@ async function getUserByEmail(email) {
     return null;
   }
 }
-//  function profile management to get all a users profile info  by id
+
+// Function to get user profile by id
 async function getUserById(userId) {
   try {
     const [users] = await pool.query(
