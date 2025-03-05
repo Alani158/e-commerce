@@ -28,7 +28,11 @@ function Navbar() {
           >
             Sign Up
           </Link>
-          <CgShoppingBag className="w-5 h-5" />
+        <Link 
+        to="/cart"  >
+        <CgShoppingBag className="w-5 h-5" />
+        </Link>
+          
           <IoPersonCircleSharp className="w-5 h-5" />
           <img src={two} alt="User Icon" className="w-5 h-5" />
         </div>
