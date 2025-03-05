@@ -34,10 +34,10 @@ const ProductDetails = () => {
     } else {
       cart.push({
         productId: product.id,
-        quantity: val,
+        quantity: Number(val),
         name: product.name,
         img: product.image,
-        price: product.price,
+        price: Number(product.price),
       });
     }
 

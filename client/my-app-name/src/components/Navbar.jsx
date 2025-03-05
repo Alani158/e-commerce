@@ -10,9 +10,9 @@ function Navbar() {
       <div className="flex w-full">
         <img src={elegant} alt="Logo" className="w-20 relative left-20 h-10" />
 
-        {/* Navigation Links */}
+      
         <div className="space-x-10 relative left-14 text-sm mx-auto text-center">
-          {/* Home Button - Navigates to Full Page */}
+      
           <Link to="/" className="hover:text-gray-500">
             Home
           </Link>
@@ -28,7 +28,11 @@ function Navbar() {
           >
             Sign Up
           </Link>
-          <CgShoppingBag className="w-5 h-5" />
+        <Link 
+        to="/cart"  >
+        <CgShoppingBag className="w-5 h-5" />
+        </Link>
+
           <IoPersonCircleSharp className="w-5 h-5" />
           <img src={two} alt="User Icon" className="w-5 h-5" />
         </div>
