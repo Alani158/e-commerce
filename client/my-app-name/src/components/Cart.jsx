@@ -125,7 +125,7 @@ const Cart = () => {
           </div>
 
           {/* Right Section - Cart Summary */}
-          <div className="border p-6 rounded-md shadow-md h-[70vh]">
+          <div className="border p-6 rounded-md shadow-md  h-[50vh]">
             <h3 className="text-lg font-bold mb-4">Cart Summary</h3>
 
              {/* Shipping Options */}
