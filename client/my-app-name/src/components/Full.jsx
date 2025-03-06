@@ -12,7 +12,7 @@ import Footer from "./Footer";
 
 function Full() {
   return (
-    <div className="w-full h-full  ">
+    <div className=" sm:w-full  w-full  h-full  ">
       <div className="w-full bg-[#F3F5F7]">
         <div className="w-[50vh] justify-self-center space-x-6 flex  ">
           <div className=" flex space-x-2 ">
