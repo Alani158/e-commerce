@@ -15,7 +15,8 @@ const ImageSlider = () => {
   ];
 
   return (
-    <div className="relative w-[150vh] mx-auto">
+
+    <div className="relative sm:w-[150vh]  mx-auto   w-[150vh] sm:mx-auto">
       {/* Swiper Component */}
       <Swiper
         modules={[Navigation]}
@@ -32,7 +33,7 @@ const ImageSlider = () => {
             <img
               src={image}
               alt={`Slide ${index + 1}`}
-              className="w-full h-80 object-cover rounded-lg"
+              className="sm:w-full h-80 mx-auto   object-cover rounded-lg"
             />
           </SwiperSlide>
         ))}

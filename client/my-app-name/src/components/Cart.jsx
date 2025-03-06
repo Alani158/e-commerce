@@ -15,22 +15,12 @@ const Cart = () => {
   }, []);
   
   
-  const handleRemove = (productId) => {
-    const updatedCart = cart.filter((item) => item.productId !== productId);
-    setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-  };
-
+  
   const subtotal = cart.reduce((acc, item) => acc + Number(item.price) * item.quantity, 0);
   const total = subtotal + shipping;
 
 
   
-    
-  
-  
-  
-
   const handleQuantityChange = (productId, change) => {
     const updatedCart = cart.map((item) =>
       item.productId === productId
@@ -39,7 +29,25 @@ const Cart = () => {
     );
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
+  
+    // 🔥 Trigger event to notify Navbar
+    window.dispatchEvent(new Event("storage"));
   };
+  
+  const handleRemove = (productId) => {
+    const updatedCart = cart.filter((item) => item.productId !== productId);
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  
+    // 🔥 Trigger event to notify Navbar
+    window.dispatchEvent(new Event("storage"));
+  };
+  
+  
+  
+  
+
+  
 
  
   return (
