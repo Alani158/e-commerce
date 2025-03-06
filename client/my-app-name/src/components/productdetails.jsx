@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import NewArrivals from "./NewArrival";
 import Newsletter from "./Newsletter";
@@ -96,7 +96,7 @@ const ProductDetails = () => {
           <p className="mt-4 font-normal ">{product.message}</p>
           <div className="mt-4 flex gap-4  font-medium text-xl ">
             {" "}
-            <p className="text-black">{product.price}</p>
+            <p className="text-black">${product.price}</p>
             {product.originalPrice && (
               <p className="line-through text-gray-600">
                 {product.originalPrice}
@@ -163,13 +163,17 @@ const ProductDetails = () => {
               <button className="">wishlist</button>
             </div>
           </div>
-          <div
-            className="w-full mt-6 bg-black  justify-self-center flex justify-center items-center border-2 border-black rounded-lg cursor-pointer"
-            onClick={handleAddToCart}
-          >
-            {" "}
-            <button className="text-white py-2">Add to Cart</button>
-          </div>
+          {""}
+          <Link to="/cart">
+            <div
+              className="w-full mt-6 bg-black  justify-self-center flex justify-center items-center border-2 border-black rounded-lg cursor-pointer"
+              onClick={handleAddToCart}
+            >
+              {" "}
+              <button className="text-white py-2">Add to Cart</button>
+            </div>
+          </Link>
+
           <div className="mt-6">
             {" "}
             <p className="text-[#807E7E] ">
