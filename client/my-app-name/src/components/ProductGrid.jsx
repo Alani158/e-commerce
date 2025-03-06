@@ -47,7 +47,7 @@ const ProductGrid = () => {
 
             {/* Price & Discount */}
             <div className="flex items-center justify-center space-x-2 text-sm">
-              <span className="font-bold">{product.price}</span>
+              <span className="font-bold">${product.price}</span>
               {product.originalPrice && (
                 <span className="text-gray-500 line-through text-xs">
                   {product.originalPrice}
