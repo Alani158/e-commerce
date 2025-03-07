@@ -34,7 +34,9 @@ function Navbar() {
   return (
     <>
       {/* ✅ Top Announcement Bar (Ensures No Overlap) */}
-
+      <div className="w-full bg-gray-100 text-center py-2 text-sm">
+        <span>🛍️ 30% storewide - Limited <Link to="/shop" className="text-blue-500">Shop Now →</Link></span>
+      </div>
 
       {/* ✅ Navbar with Fixed Position & No Overlap */}
       <nav className="w-full bg-white shadow-md fixed top-[32px] left-0 z-50 h-[50px] flex items-center">
@@ -72,17 +74,6 @@ function Navbar() {
             className="md:hidden text-black"
             onClick={() => setIsOpen(!isOpen)}
           >
-<<<<<<< HEAD
-            Sign Up
-          </Link>
-        <Link 
-        to="/cart"  >
-        <CgShoppingBag className="w-5 h-5" />
-        </Link>
-          
-          <IoPersonCircleSharp className="w-5 h-5" />
-          <img src={two} alt="User Icon" className="w-5 h-5" />
-=======
             {isOpen ? <FiX className="w-5 h-5" /> : <FiMenu className="w-5 h-5" />}
           </button>
         </div>
@@ -115,7 +106,6 @@ function Navbar() {
 
           {/* Sign In Button */}
           <Link to="/signin" className="block bg-black text-white text-center py-1 rounded-md text-sm" onClick={() => setIsOpen(false)}>Sign In</Link>
->>>>>>> f24f461fa7c3cf1f7476964e8e71d5738d4f813d
         </div>
       </div>
     </>
