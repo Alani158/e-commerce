@@ -33,11 +33,7 @@ function Navbar() {
 
   return (
     <>
-      {/* ✅ Top Announcement Bar (Ensures No Overlap) */}
-      <div className="w-full bg-gray-100 text-center py-2 text-sm">
-        <span>🛍️ 30% storewide - Limited <Link to="/shop" className="text-blue-500">Shop Now →</Link></span>
-      </div>
-
+    
       {/* ✅ Navbar with Fixed Position & No Overlap */}
       <nav className="w-full bg-white shadow-md fixed top-[32px] left-0 z-50 h-[50px] flex items-center">
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
