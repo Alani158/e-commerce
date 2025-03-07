@@ -7,6 +7,7 @@ import SignIn from "./components/SignIn";
 import ShopNow from "./components/ShopNow"; // Import ShopNow Component
 import ProductDetails from "./components/productdetails";
 import Cart from "./components/Cart"; // Import Cart Component
+import Checkout from "./components/checkout";
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/shopnow" element={<ShopNow />} />
         <Route path="/product/:id" element={<ProductDetails />} />
-        <Route path="/cart" element={<Cart />} /> {/* Add Cart route */}
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </Router>
   );

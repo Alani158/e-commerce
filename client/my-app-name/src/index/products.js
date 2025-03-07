@@ -11,7 +11,7 @@ const products = [
   {
     id: 1,
     name: "Loveseat Sofa",
-    price: "$199.00",
+    price: 199.00,
     originalPrice: "$600.00",
     image: "chair.png",
     subimg: "livingroom.png",
@@ -36,7 +36,7 @@ const products = [
   {
     id: 2,
     name: "Luxury Sofa",
-    price: "$299.00",
+    price: 299.00,
     originalPrice: "$500.00",
     image: "LivingRoom.png",
     reviewcount: reviewcount,
@@ -46,7 +46,7 @@ const products = [
   {
     id: 3,
     name: "Table Lamp",
-    price: "$19.00",
+    price: 19.00,
     originalPrice: null,
     image: "lamp.png",
     discount: "-50%",
@@ -55,7 +55,7 @@ const products = [
   {
     id: 4,
     name: "Cozy Sofa",
-    price: "$299.00",
+    price: 299.00,
     originalPrice: null,
     image: "cozy-sofa.png",
     discount: "-50%",
@@ -64,7 +64,7 @@ const products = [
   {
     id: 5,
     name: "White Drawer Unit",
-    price: "$89.99",
+    price: 89.99,
     originalPrice: null,
     image: "drawer.png",
     discount: "-50%",
@@ -73,7 +73,7 @@ const products = [
   {
     id: 6,
     name: "Black Tray Table",
-    price: "$19.99",
+    price: 19.99,
     originalPrice: null,
     image: "tray-table.png",
     discount: "-50%",
@@ -82,7 +82,7 @@ const products = [
   {
     id: 7,
     name: "Table Lamp",
-    price: "$19.00",
+    price: 19.00,
     originalPrice: null,
     image: "lamp2.png",
     discount: "-50%",
@@ -91,7 +91,7 @@ const products = [
   {
     id: 8,
     name: "Black Brow Side Table",
-    price: "$16.99",
+    price: 16.99,
     originalPrice: null,
     image: "side-table.png",
     discount: "-50%",
@@ -100,7 +100,7 @@ const products = [
   {
     id: 9,
     name: "Light Beige Pillow",
-    price: "$3.99",
+    price: 3.99,
     originalPrice: null,
     image: "pillow1.png",
     discount: "-50%",
@@ -109,7 +109,7 @@ const products = [
   {
     id: 10,
     name: "Table Lamp",
-    price: "$39.99",
+    price: 39.99,
     originalPrice: null,
     image: "bulb.png",
     discount: "-50%",
@@ -118,7 +118,7 @@ const products = [
   {
     id: 11,
     name: "Bamboo Basket",
-    price: "$9.99",
+    price: 9.99,
     originalPrice: null,
     image: "basket.png",
     discount: "-50%",
@@ -127,7 +127,7 @@ const products = [
   {
     id: 12,
     name: "Off-white Pillow",
-    price: "$7.99",
+    price: 7.99,
     originalPrice: null,
     image: "pillow2.png",
     discount: "-50%",
