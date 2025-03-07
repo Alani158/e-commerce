@@ -159,7 +159,10 @@ const Cart = () => {
 
 
             {/* Checkout Button */}
+            
+            <Link to="/checkout">
             <button className="bg-black text-white w-full py-2 mt-4 rounded-md">Checkout</button>
+            </Link>
           </div>
         </div>
       </div>
