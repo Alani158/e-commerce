@@ -1,14 +1,12 @@
 GET http://localhost:5000/api/users/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzQwMzM1MTE3LCJleHAiOjE3NDA5Mzk5MTd9.p6W5Sks5evSzkTEigRhBACPLPqz6XazaKQHEZ_GScKI
-
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzQxNDc0MTgzLCJleHAiOjE3NDIwNzg5ODN9.gRfO2XwS0rmjJeRJhiKzga5fiv-X-w7SA7PlDAJKM4w
 ### Create User
-POST http://localhost:5000/api/users/signup
+POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "name": "alantestkkdk",
-  "email": "alantekdkst@example.com",
-  "password": "passwordjdkd123kkl"
+
+  "email": "alan-the@gmail.com",
+  "password": "Password123"
 }
  
