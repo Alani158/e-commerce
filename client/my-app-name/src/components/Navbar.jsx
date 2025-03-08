@@ -12,7 +12,10 @@ function Navbar() {
   useEffect(() => {
     const updateCartCount = () => {
       const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-      const totalItems = storedCart.reduce((acc, item) => acc + item.quantity, 0);
+      const totalItems = storedCart.reduce(
+        (acc, item) => acc + item.quantity,
+        0
+      );
       setCartCount(totalItems);
     };
 
@@ -34,12 +37,24 @@ function Navbar() {
   return (
     <>
       {/* ✅ Top Announcement Bar (Ensures No Overlap) */}
-      <div className="w-full bg-gray-100 text-center py-2 text-sm">
-        <span>🛍️ 30% storewide - Limited <Link to="/shop" className="text-blue-500">Shop Now →</Link></span>
-      </div>
-
       {/* ✅ Navbar with Fixed Position & No Overlap */}
-      <nav className="w-full bg-white shadow-md fixed top-[32px] left-0 z-50 h-[50px] flex items-center">
+      <nav className="w-full bg-white shadow-md fixed top-0 left-0 z-50 h-[80px]  items-center">
+        <div className="w-full ">
+          <div className="w-[50vh] justify-self-center space-x-6 flex  ">
+            <div className=" flex space-x-2 ">
+              <img src="cut.png" alt="" className="w-4 h-4 relative top-1 " />
+              <div className=" space-x-1 flex">
+                <p>30% storewide</p>
+                <p>-Limited</p>
+              </div>
+            </div>
+            <div className="">
+              <a href="/" className="text-sm text-blue-500  hover:underline">
+                Shop Now →
+              </a>
+            </div>
+          </div>
+        </div>
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
           {/* Logo */}
           <Link to="/">
@@ -48,10 +63,18 @@ function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6 text-sm">
-            <Link to="/" className="hover:text-gray-500">Home</Link>
-            <Link to="/shop" className="hover:text-gray-500">Shop</Link>
-            <Link to="/product" className="hover:text-gray-500">Product</Link>
-            <Link to="/contact" className="hover:text-gray-500">Contact Us</Link>
+            <Link to="/" className="hover:text-gray-500">
+              Home
+            </Link>
+            <Link to="/shop" className="hover:text-gray-500">
+              Shop
+            </Link>
+            <Link to="/product" className="hover:text-gray-500">
+              Product
+            </Link>
+            <Link to="/contact" className="hover:text-gray-500">
+              Contact Us
+            </Link>
           </div>
 
           {/* Icons */}
@@ -59,14 +82,23 @@ function Navbar() {
             <Link to="/cart" className="relative">
               <CgShoppingBag className="w-5 h-5" />
               {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full px-1">{cartCount}</span>
+                <span className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full px-1">
+                  {cartCount}
+                </span>
               )}
             </Link>
             <Link to="/wishlist" className="relative">
               <AiOutlineHeart className="w-5 h-5" />
-              <span className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full px-1">2</span>
+              <span className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full px-1">
+                2
+              </span>
             </Link>
-            <Link to="/signin" className="bg-black text-white px-3 py-1 rounded-md text-xs">Sign In</Link>
+            <Link
+              to="/signin"
+              className="bg-black text-white px-3 py-1 rounded-md text-xs"
+            >
+              Sign In
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -74,14 +106,17 @@ function Navbar() {
             className="md:hidden text-black"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <FiX className="w-5 h-5" /> : <FiMenu className="w-5 h-5" />}
+            {isOpen ? (
+              <FiX className="w-5 h-5" />
+            ) : (
+              <FiMenu className="w-5 h-5" />
+            )}
           </button>
         </div>
       </nav>
-
       {/* ✅ Prevent Page Content from Being Hidden */}
-      <div className="h-[82px]"></div> {/* Prevents content from hiding behind navbar */}
-
+      <div className="h-[82px]"></div>{" "}
+      {/* Prevents content from hiding behind navbar */}
       {/* ✅ Mobile Menu */}
       <div
         className={`fixed top-0 left-0 w-full h-full bg-white z-40 transform transition-transform duration-300 ${
@@ -89,23 +124,67 @@ function Navbar() {
         }`}
       >
         <div className="py-5 px-6 space-y-4">
-          <Link to="/" className="block text-base hover:text-gray-500" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link to="/shop" className="block text-base hover:text-gray-500" onClick={() => setIsOpen(false)}>Shop</Link>
-          <Link to="/product" className="block text-base hover:text-gray-500" onClick={() => setIsOpen(false)}>Product</Link>
-          <Link to="/contact" className="block text-base hover:text-gray-500" onClick={() => setIsOpen(false)}>Contact Us</Link>
+          <Link
+            to="/"
+            className="block text-base hover:text-gray-500"
+            onClick={() => setIsOpen(false)}
+          >
+            Home
+          </Link>
+          <Link
+            to="/shop"
+            className="block text-base hover:text-gray-500"
+            onClick={() => setIsOpen(false)}
+          >
+            Shop
+          </Link>
+          <Link
+            to="/product"
+            className="block text-base hover:text-gray-500"
+            onClick={() => setIsOpen(false)}
+          >
+            Product
+          </Link>
+          <Link
+            to="/contact"
+            className="block text-base hover:text-gray-500"
+            onClick={() => setIsOpen(false)}
+          >
+            Contact Us
+          </Link>
 
           {/* Cart & Wishlist */}
           <div className="space-y-3">
-            <Link to="/cart" className="flex items-center justify-between text-base hover:text-gray-500" onClick={() => setIsOpen(false)}>
-              Cart <span className="bg-black text-white text-xs rounded-full px-2">{cartCount}</span>
+            <Link
+              to="/cart"
+              className="flex items-center justify-between text-base hover:text-gray-500"
+              onClick={() => setIsOpen(false)}
+            >
+              Cart{" "}
+              <span className="bg-black text-white text-xs rounded-full px-2">
+                {cartCount}
+              </span>
             </Link>
-            <Link to="/wishlist" className="flex items-center justify-between text-base hover:text-gray-500" onClick={() => setIsOpen(false)}>
-              Wishlist <span className="bg-black text-white text-xs rounded-full px-2">2</span>
+            <Link
+              to="/wishlist"
+              className="flex items-center justify-between text-base hover:text-gray-500"
+              onClick={() => setIsOpen(false)}
+            >
+              Wishlist{" "}
+              <span className="bg-black text-white text-xs rounded-full px-2">
+                2
+              </span>
             </Link>
           </div>
 
           {/* Sign In Button */}
-          <Link to="/signin" className="block bg-black text-white text-center py-1 rounded-md text-sm" onClick={() => setIsOpen(false)}>Sign In</Link>
+          <Link
+            to="/signin"
+            className="block bg-black text-white text-center py-1 rounded-md text-sm"
+            onClick={() => setIsOpen(false)}
+          >
+            Sign In
+          </Link>
         </div>
       </div>
     </>

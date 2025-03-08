@@ -16,7 +16,10 @@ const CategoryGrid = () => {
           <div className="absolute top-4 left-4">
             <h3 className="text-lg font-semibold">Living Room</h3>
             {/* Fix: Use Link instead of <a href="#"> */}
-            <Link to="/shopnow" className="text-gray-600 text-sm hover:underline">
+            <Link
+              to="/shopnow"
+              className="text-gray-600 text-sm hover:underline"
+            >
               Shop Now →
             </Link>
           </div>
@@ -33,7 +36,10 @@ const CategoryGrid = () => {
             />
             <div className="absolute top-4 left-4">
               <h3 className="text-sm font-semibold">Bedroom</h3>
-              <Link to="/shopnow" className="text-gray-600 text-xs hover:underline">
+              <Link
+                to="/shopnow"
+                className="text-gray-600 text-xs hover:underline"
+              >
                 Shop Now →
               </Link>
             </div>
@@ -48,7 +54,10 @@ const CategoryGrid = () => {
             />
             <div className="absolute top-4 left-4">
               <h3 className="text-sm font-semibold">Kitchen</h3>
-              <Link to="/shopnow" className="text-gray-600 text-xs hover:underline">
+              <Link
+                to="/shopnow"
+                className="text-gray-600 text-xs hover:underline"
+              >
                 Shop Now →
               </Link>
             </div>

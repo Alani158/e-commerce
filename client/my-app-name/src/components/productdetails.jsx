@@ -23,8 +23,10 @@ const ProductDetails = () => {
     setVal(val - 1);
   };
 
+  const userId = localStorage.getItem("userId"); // Assuming user ID is stored in local storage
+
   const handleAddToCart = () => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cart = JSON.parse(localStorage.getItem(`cart_${userId}`)) || [];
     const existingProductIndex = cart.findIndex(
       (item) => item.productId === product.id
     );
@@ -41,7 +43,7 @@ const ProductDetails = () => {
       });
     }
 
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem(`cart_${userId}`, JSON.stringify(cart));
     alert("Product added to cart");
   };
 
