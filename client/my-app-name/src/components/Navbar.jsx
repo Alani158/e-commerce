@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CgShoppingBag } from "react-icons/cg";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -8,6 +8,8 @@ import elegant from "../images/elegant.png";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const updateCartCount = () => {
@@ -27,12 +29,24 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsAuthenticated(!!token);
+  }, []);
+
+  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
     }
   }, [isOpen]);
+
+  const handleSignOut = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    setIsAuthenticated(false);
+    navigate("/signin"); // Redirect to sign-in page after sign-out
+  };
 
   return (
     <>
@@ -93,12 +107,21 @@ function Navbar() {
                 2
               </span>
             </Link>
-            <Link
-              to="/signin"
-              className="bg-black text-white px-3 py-1 rounded-md text-xs"
-            >
-              Sign In
-            </Link>
+            {isAuthenticated ? (
+              <button
+                onClick={handleSignOut}
+                className="bg-black text-white px-3 py-1 rounded-md text-xs"
+              >
+                Sign Out
+              </button>
+            ) : (
+              <Link
+                to="/signin"
+                className="bg-black text-white px-3 py-1 rounded-md text-xs"
+              >
+                Sign In
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -177,14 +200,26 @@ function Navbar() {
             </Link>
           </div>
 
-          {/* Sign In Button */}
-          <Link
-            to="/signin"
-            className="block bg-black text-white text-center py-1 rounded-md text-sm"
-            onClick={() => setIsOpen(false)}
-          >
-            Sign In
-          </Link>
+          {/* Sign In/Out Button */}
+          {isAuthenticated ? (
+            <button
+              onClick={() => {
+                handleSignOut();
+                setIsOpen(false);
+              }}
+              className="block bg-black text-white text-center py-1 rounded-md text-sm"
+            >
+              Sign Out
+            </button>
+          ) : (
+            <Link
+              to="/signin"
+              className="block bg-black text-white text-center py-1 rounded-md text-sm"
+              onClick={() => setIsOpen(false)}
+            >
+              Sign In
+            </Link>
+          )}
         </div>
       </div>
     </>

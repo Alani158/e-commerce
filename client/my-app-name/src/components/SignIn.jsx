@@ -13,6 +13,7 @@ const SignIn = () => {
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(""); // Clear errors before validation
@@ -23,6 +24,10 @@ const SignIn = () => {
         { email, password }
       );
 
+      // Store the token in local storage
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("userId", response.data.userId);
+
       alert(response.data.message); // Success message
       navigate("/"); // Redirect to dashboard or home
     } catch (err) {
@@ -31,9 +36,9 @@ const SignIn = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen  bg-gray-100 px-4">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 px-4">
       {/* Container */}
-      <div className="bg-white  min-h-screen  flex flex-col md:flex-row w-full max-w-4xl shadow-lg rounded-lg overflow-hidden">
+      <div className="bg-white min-h-screen flex flex-col md:flex-row w-full max-w-4xl shadow-lg rounded-lg overflow-hidden">
         {/* Left Side - Image Section */}
         <div className="w-full md:w-1/2 flex justify-center items-center bg-gray-200">
           <img
@@ -44,7 +49,7 @@ const SignIn = () => {
         </div>
 
         {/* Right Side - Form Section */}
-        <div className="w-full md:w-1/2 p-10 ">
+        <div className="w-full md:w-1/2 p-10">
           <h2 className="text-3xl font-semibold text-gray-900">Sign In</h2>
           <p className="text-gray-600 text-sm mt-2">
             Don't have an account yet?{" "}

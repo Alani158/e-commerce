@@ -55,7 +55,7 @@ const Cart = () => {
           </span>
         </div>
 
-        <div className="grid grid-cols-3 gap-8">
+        <div className="sm:grid sm:grid-cols-3 gap-8">
           {/* Left Section - Cart Items */}
           <div className="col-span-2">
             <div className="border-b pb-4 font-semibold flex justify-between">
