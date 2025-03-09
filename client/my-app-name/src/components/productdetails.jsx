@@ -28,13 +28,13 @@ const ProductDetails = () => {
   const handleAddToCart = () => {
     const userId = localStorage.getItem("userId") || "guest"; // Fallback for non-logged-in users
     const cartKey = `cart_${userId}`;
-  
+
     let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
-  
+
     const existingProductIndex = cart.findIndex(
       (item) => item.productId === product.id
     );
-  
+
     if (existingProductIndex !== -1) {
       cart[existingProductIndex].quantity += val;
     } else {
@@ -46,11 +46,11 @@ const ProductDetails = () => {
         price: Number(product.price),
       });
     }
-  
+
     localStorage.setItem(cartKey, JSON.stringify(cart));
     alert("Product added to cart");
   };
-  
+
   if (!product) {
     return <div className="text-center text-red-500">Product not found</div>;
   }
@@ -61,8 +61,8 @@ const ProductDetails = () => {
         {" "}
         <Navbar />
       </div>
-      <div className="flex gap-6 mt-4 justify-self-center w-[90%]">
-        <div className="w-[50%]  grid grid-rows-2 grid-cols-2 gap-6">
+      <div className="sm:flex gap-6 mt-4 justify-self-center w-[90%]">
+        <div className="sm:w-[50%]  grid grid-rows-2 grid-cols-2 gap-6">
           <img
             key={id}
             src={`/${product.image}`}
@@ -96,7 +96,7 @@ const ProductDetails = () => {
           />
         </div>
 
-        <div className="ml-6 w-[50%] ">
+        <div className="ml-6  sm:w-[50%] ">
           <p className="mt-4">{product.reviewcount} reviews</p>
           <h2 className="text-3xl font-bold mt-4">{product.name}</h2>
           <p className="mt-4 font-normal ">{product.message}</p>
