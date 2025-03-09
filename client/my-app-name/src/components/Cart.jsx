@@ -59,7 +59,7 @@ const Cart = () => {
     <div>
       <Navbar />
       <div className="w-[80%] mx-auto mt-10">
-        <h2 className="text-3xl font-bold text-center mb-6">Shopping Cart</h2>
+        <h2 className="text-3xl font-bold text-center mb-6"> Cart</h2>
 
         <div className="grid sm:grid-cols-3 gap-8">
           {/* Left Section - Cart Items */}
@@ -69,7 +69,7 @@ const Cart = () => {
             ) : (
               <div>
                 {/* ✅ Cart Headers */}
-                <div className="flex justify-between items-center font-semibold bg-gray-100 px-4 py-2 rounded-md">
+                <div className="flex justify-between items-center font-semibold bg-white  px-4 py-2 rounded-md">
                   <span className="w-1/3">Product</span>
                   <span className="w-1/6 text-center">Quantity</span>
                   <span className="w-1/6 text-center">Price</span>
