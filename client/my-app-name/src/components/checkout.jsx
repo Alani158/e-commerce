@@ -8,28 +8,44 @@ export default function Checkout() {
 
   const handleContinueShopping = () => {
     localStorage.removeItem(`cart_${userId}`);
+    alert("Order placed successfully");
     navigate("/");
+  };
+
+  const handlebackCart = () => {
+    navigate("/cart");
   };
 
   return (
     <div className="w-full mx-auto pt-10">
       <Navbar />
 
-      <div className="gap-6 my-40 justify-self-center w-full">
-        <div className="justify-self-center justify-items-center w-[100%]">
-          <h1 className="text-xl sm:text-4xl">Order made successfully</h1>
-          <p className="text-center text-base sm:text-3xl px-10 w-[80%] mt-4">
-            Thank you for shopping with us,
-            <br /> Hope to see you again
-          </p>
+      <div className="gap-6 justify-self-center  flex my-20   w-[90%]">
+        <div className="w-[50%] border border-black shadow-md hover:shadow-inner transition-all hover:shadow-black cursor-pointer shadow-black  rounded-lg h-96 ">
+          <h1 className="text-center text-base sm:text-3xl px-10 mt-24">
+            {" "}
+            Sure of your order?, click on the button blow to confirm
+          </h1>
+          <div
+            className="w-[50%] sm:w-[40%] mt-6 border border-black shadow-md  hover:p-2 transition-all   bg-black justify-self-center flex justify-center items-center rounded-lg cursor-pointer"
+            onClick={handleContinueShopping}
+          >
+            <button className="text-white py-2 sm:text-2xl">
+              Continue shopping
+            </button>
+          </div>
         </div>
-        <div
-          className="w-[50%] sm:w-[30%] mt-6 bg-black justify-self-center flex justify-center items-center border-2 border-black rounded-lg cursor-pointer"
-          onClick={handleContinueShopping}
-        >
-          <button className="text-white py-2 sm:text-2xl">
-            Continue shopping
-          </button>
+
+        <div className="w-[50%] border  border-black shadow-md hover:shadow-inner transition-all hover:shadow-black cursor-pointer shadow-black rounded-lg h-96 ">
+          <h2 className="text-center text-base sm:text-3xl px-10 mt-24">
+            Not sure? You can always come back to your cart and checkout anytime
+          </h2>
+          <div
+            className="w-[50%] sm:w-[40%] mt-6 border border-black shadow-md  hover:p-2 transition-all   bg-black justify-self-center flex justify-center items-center rounded-lg cursor-pointer"
+            onClick={handlebackCart}
+          >
+            <button className="text-white py-2 sm:text-2xl">Go to Cart</button>
+          </div>
         </div>
       </div>
     </div>
