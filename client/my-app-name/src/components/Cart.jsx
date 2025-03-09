@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -13,14 +13,17 @@ const Cart = () => {
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem(`cart_${userId}`)) || [];
     setCart(storedCart);
-  }, []);
+  }, [userId]);
 
   // ✅ Update cart in localStorage and state
   const updateCartCount = (updatedCart) => {
-    const totalItems = updatedCart.reduce((acc, item) => acc + item.quantity, 0);
+    const totalItems = updatedCart.reduce(
+      (acc, item) => acc + item.quantity,
+      0
+    );
     localStorage.setItem(`cart_${userId}`, JSON.stringify(updatedCart));
     localStorage.setItem("cartCount", totalItems);
-    
+
     // 🔄 Notify Navbar about cart update
     window.dispatchEvent(new Event("storage"));
   };
@@ -45,14 +48,14 @@ const Cart = () => {
 
   // ✅ Reset cart on checkout
   const handleCheckout = () => {
-    localStorage.removeItem(`cart_${userId}`);
-    setCart([]);
-    updateCartCount([]);
     navigate("/checkout");
   };
 
   // ✅ Calculate subtotal and total
-  const subtotal = cart.reduce((acc, item) => acc + Number(item.price) * item.quantity, 0);
+  const subtotal = cart.reduce(
+    (acc, item) => acc + Number(item.price) * item.quantity,
+    0
+  );
   const total = subtotal + shipping;
 
   return (
@@ -78,7 +81,10 @@ const Cart = () => {
 
                 <ul className="mt-4 space-y-6">
                   {cart.map((item) => (
-                    <li key={item.productId} className="flex items-center justify-between border-b pb-4">
+                    <li
+                      key={item.productId}
+                      className="flex items-center justify-between border-b pb-4"
+                    >
                       {/* ✅ Product Info */}
                       <div className="flex items-center space-x-4 w-1/3">
                         <img
@@ -88,7 +94,10 @@ const Cart = () => {
                         />
                         <div>
                           <p className="font-semibold">{item.name}</p>
-                          <button onClick={() => handleRemove(item.productId)} className="text-red-500 text-sm mt-1">
+                          <button
+                            onClick={() => handleRemove(item.productId)}
+                            className="text-red-500 text-sm mt-1"
+                          >
                             ✕ Remove
                           </button>
                         </div>
@@ -96,17 +105,29 @@ const Cart = () => {
 
                       {/* ✅ Quantity Selector */}
                       <div className="flex items-center w-1/6 justify-center">
-                        <button onClick={() => handleQuantityChange(item.productId, -1)} className="px-2 py-1 border rounded-md">
+                        <button
+                          onClick={() =>
+                            handleQuantityChange(item.productId, -1)
+                          }
+                          className="px-2 py-1 border rounded-md"
+                        >
                           −
                         </button>
                         <span className="mx-2">{item.quantity}</span>
-                        <button onClick={() => handleQuantityChange(item.productId, 1)} className="px-2 py-1 border rounded-md">
+                        <button
+                          onClick={() =>
+                            handleQuantityChange(item.productId, 1)
+                          }
+                          className="px-2 py-1 border rounded-md"
+                        >
                           +
                         </button>
                       </div>
 
                       {/* ✅ Price */}
-                      <span className="w-1/6 text-center">${Number(item.price).toFixed(2)}</span>
+                      <span className="w-1/6 text-center">
+                        ${Number(item.price).toFixed(2)}
+                      </span>
 
                       {/* ✅ Subtotal */}
                       <span className="w-1/6 font-semibold text-right">
@@ -143,7 +164,7 @@ const Cart = () => {
                   checked={shipping === 15}
                   onChange={() => setShipping(15)}
                 />
-  <span>Express Shipping (+$15.00)</span>
+                <span>Express Shipping (+$15.00)</span>
               </label>
               <label className="flex items-center space-x-2">
                 <input
