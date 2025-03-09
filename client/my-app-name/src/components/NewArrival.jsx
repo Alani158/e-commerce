@@ -1,10 +1,37 @@
 import React from "react";
 import "../index.css";
+import { Link } from "react-router-dom";
 import { newAarrival } from "../index/products";
 // import products from "../index/products";
 const NewArrivals = () => {
+  const handleAddToCart = (product) => {
+    const val = 1; // Default quantity value
+    const userId = localStorage.getItem("userId") || "guest"; // Fallback for non-logged-in users
+    const cartKey = `cart_${userId}`;
+
+    let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+
+    const existingProductIndex = cart.findIndex(
+      (item) => item.productId === product.id
+    );
+
+    if (existingProductIndex !== -1) {
+      cart[existingProductIndex].quantity += val;
+    } else {
+      cart.push({
+        productId: product.id,
+        quantity: Number(val),
+        name: product.name,
+        img: product.image,
+        price: Number(product.price),
+      });
+    }
+
+    localStorage.setItem(cartKey, JSON.stringify(cart));
+    alert("Product added to cart");
+  };
   return (
-    <div className="w-[180vh]  mx-auto px-4  py-10">
+    <div className="w-[90%]  mx-auto px-4  py-10">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <div className="">
@@ -43,9 +70,15 @@ const NewArrivals = () => {
               />
 
               {/* Add to Cart Button Inside Box */}
-              <button className="w-full mt-3 bg-black text-white text-sm py-2 rounded hover:bg-gray-800">
-                Add to cart
-              </button>
+              <Link to="/cart">
+                <div
+                  className="w-full px-2 mt-6 bg-black  justify-self-center flex justify-center items-center border-2 border-black rounded-lg cursor-pointer"
+                  onClick={() => handleAddToCart(product)}
+                >
+                  {" "}
+                  <button className="text-white py-2">Add to Cart</button>
+                </div>
+              </Link>
             </div>
 
             {/* Product Info - Outside Image Container */}
@@ -61,10 +94,10 @@ const NewArrivals = () => {
 
               {/* Price & Discount */}
               <div className="flex items-center justify-center space-x-2 text-sm mt-1">
-                <span className="font-bold">{product.price}</span>
+                <span className="font-bold">${product.price}</span>
                 {product.originalPrice && (
                   <span className="text-gray-500 line-through text-xs">
-                    {product.originalPrice}
+                    ${product.originalPrice}
                   </span>
                 )}
               </div>

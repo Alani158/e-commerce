@@ -11,7 +11,7 @@ const products = [
   {
     id: 1,
     name: "Loveseat Sofa",
-    price: 199.00,
+    price: 199.0,
     originalPrice: "$600.00",
     image: "chair.png",
     subimg: "livingroom.png",
@@ -36,7 +36,7 @@ const products = [
   {
     id: 2,
     name: "Luxury Sofa",
-    price: 299.00,
+    price: 299.0,
     originalPrice: "$500.00",
     image: "LivingRoom.png",
     reviewcount: reviewcount,
@@ -46,7 +46,7 @@ const products = [
   {
     id: 3,
     name: "Table Lamp",
-    price: 19.00,
+    price: 19.0,
     originalPrice: null,
     image: "lamp.png",
     discount: "-50%",
@@ -55,7 +55,7 @@ const products = [
   {
     id: 4,
     name: "Cozy Sofa",
-    price: 299.00,
+    price: 299.0,
     originalPrice: null,
     image: "cozy-sofa.png",
     discount: "-50%",
@@ -82,7 +82,7 @@ const products = [
   {
     id: 7,
     name: "Table Lamp",
-    price: 19.00,
+    price: 19.0,
     originalPrice: null,
     image: "lamp2.png",
     discount: "-50%",
@@ -139,8 +139,8 @@ const newAarrival = [
   {
     id: 1,
     name: "Loveseat Sofa",
-    price: "$199.00",
-    originalPrice: "$249.00",
+    price: 199.0,
+    originalPrice: 249.0,
     image: chair,
     discount: "-30%",
     rating: 5,
@@ -148,7 +148,7 @@ const newAarrival = [
   {
     id: 2,
     name: "Table Lamp",
-    price: "$24.99",
+    price: 24.99,
     originalPrice: null,
     image: bulb,
     discount: "-50%",
@@ -157,7 +157,7 @@ const newAarrival = [
   {
     id: 3,
     name: "Beige Table Lamp",
-    price: "$32.99",
+    price: 32.99,
     originalPrice: null,
     image: lamp,
     discount: "-50%",
@@ -166,7 +166,7 @@ const newAarrival = [
   {
     id: 4,
     name: "Bamboo Basket",
-    price: "$21.00",
+    price: 21.0,
     originalPrice: null,
     image: basket,
     discount: "-50%",
@@ -175,7 +175,7 @@ const newAarrival = [
   {
     id: 5,
     name: "Toaster",
-    price: "$29.99",
+    price: 29.99,
     originalPrice: null,
     image: kitchen,
     discount: "-50%",
@@ -184,7 +184,7 @@ const newAarrival = [
   {
     id: 6,
     name: "Beige Table Lamp",
-    price: "$32.99",
+    price: 32.99,
     originalPrice: null,
     image: lamp,
     discount: "-50%",
@@ -193,7 +193,7 @@ const newAarrival = [
   {
     id: 7,
     name: "Drawer",
-    price: "$32.99",
+    price: 32.99,
     originalPrice: null,
     image: image3,
     discount: "-50%",

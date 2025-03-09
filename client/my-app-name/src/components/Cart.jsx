@@ -70,26 +70,26 @@ const Cart = () => {
       <div className="w-[80%] mx-auto mt-10">
         <h2 className="text-3xl font-bold text-center mb-6"> Cart</h2>
 
-        <div className="grid sm:grid-cols-3 gap-8">
+        <div className="sm:flex w-full justify-self-center gap-8">
           {/* Left Section - Cart Items */}
-          <div className="col-span-2">
+          <div className="col-span-2 w-[70%]">
             {cart.length === 0 ? (
               <p className="text-center mt-6">Your cart is empty.</p>
             ) : (
               <div>
                 {/* ✅ Cart Headers */}
-                <div className="flex justify-between items-center font-semibold bg-white  px-4 py-2 rounded-md">
-                  <span className="w-1/3">Product</span>
-                  <span className="w-1/6 text-center">Quantity</span>
-                  <span className="w-1/6 text-center">Price</span>
-                  <span className="w-1/6 text-right">Subtotal</span>
+                <div className="flex justify-between items-center font-semibold bg-white gap-8  px-1 py-2 rounded-md">
+                  <span className="sm:w-1/3">Product</span>
+                  <span className="sm:w-1/6 text-center">Quantity</span>
+                  <span className="sm:w-1/6 text-center">Price</span>
+                  <span className="sm:w-1/6 text-right">Subtotal</span>
                 </div>
 
                 <ul className="mt-4 space-y-6">
                   {cart.map((item) => (
                     <li
                       key={item.productId}
-                      className="flex items-center justify-between border-b pb-4"
+                      className="flex items-center gap-10 justify-between border-b pb-4"
                     >
                       {/* ✅ Product Info */}
                       <div className="flex items-center space-x-4 w-1/3">
@@ -102,7 +102,7 @@ const Cart = () => {
                           <p className="font-semibold">{item.name}</p>
                           <button
                             onClick={() => handleRemove(item.productId)}
-                            className="text-red-500 text-sm mt-1"
+                            className="text-red-500 text-sm mt-20 sm:mt-1"
                           >
                             ✕ Remove
                           </button>
