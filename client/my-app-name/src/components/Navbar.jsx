@@ -13,16 +13,16 @@ function Navbar() {
 
   useEffect(() => {
     const updateCartCount = () => {
-      const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-      const totalItems = storedCart.reduce(
-        (acc, item) => acc + item.quantity,
-        0
-      );
+      const totalItems = parseInt(localStorage.getItem("cartCount")) || 0;
       setCartCount(totalItems);
     };
 
+    // Load cart count on mount
     updateCartCount();
+
+    // Listen for cart updates
     window.addEventListener("storage", updateCartCount);
+
     return () => {
       window.removeEventListener("storage", updateCartCount);
     };
@@ -33,26 +33,9 @@ function Navbar() {
     setIsAuthenticated(!!token);
   }, []);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [isOpen]);
-
-  const handleSignOut = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("userId");
-    setIsAuthenticated(false);
-    navigate("/signin"); // Redirect to sign-in page after sign-out
-  };
-
   return (
     <>
-      {/* ✅ Top Announcement Bar (Ensures No Overlap) */}
-      {/* ✅ Navbar with Fixed Position & No Overlap */}
-      <nav className="w-full bg-white shadow-md fixed top-0 left-0 z-50 h-[80px]  items-center">
+  <nav className="w-full bg-white shadow-md fixed top-0 left-0 z-50 h-[80px]  items-center">
         <div className="w-full ">
           <div className="w-[50vh] justify-self-center space-x-6 flex  ">
             <div className=" flex space-x-2 ">
@@ -75,8 +58,8 @@ function Navbar() {
             <img src={elegant} alt="Logo" className="w-16 h-8" />
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6 text-sm">
+ {/* Desktop Menu */}
+ <div className="hidden md:flex space-x-6 text-sm">
             <Link to="/" className="hover:text-gray-500">
               Home
             </Link>
@@ -91,137 +74,114 @@ function Navbar() {
             </Link>
           </div>
 
-          {/* Icons */}
-          <div className="hidden md:flex items-center space-x-3">
+
+
+
+
+    
+          {/* ✅ Icons */}
+          <div className="hidden md:flex items-center space-x-4 relative">
+            {/* 🛒 Cart Icon */}
             <Link to="/cart" className="relative">
-              <CgShoppingBag className="w-5 h-5" />
+              <CgShoppingBag className="w-6 h-6" />
               {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full px-1">
+                <span className="absolute -top-2 -right-2 bg-black text-white text-xs font-bold rounded-full px-1">
                   {cartCount}
                 </span>
               )}
             </Link>
+
+            {/* ❤️ Wishlist Icon */}
             <Link to="/wishlist" className="relative">
-              <AiOutlineHeart className="w-5 h-5" />
-              <span className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full px-1">
+              <AiOutlineHeart className="w-6 h-6" />
+              <span className="absolute -top-2 -right-2 bg-black text-white text-xs font-bold rounded-full px-1">
                 2
               </span>
             </Link>
+
+            {/* 🔑 Authentication Button */}
             {isAuthenticated ? (
               <button
-                onClick={handleSignOut}
-                className="bg-black text-white px-3 py-1 rounded-md text-xs"
+                onClick={() => {
+                  localStorage.removeItem("token");
+                  localStorage.removeItem("userId");
+                  setIsAuthenticated(false);
+                  navigate("/signin");
+                }}
+                className="bg-black text-white px-4 py-1 rounded-md text-sm"
               >
                 Sign Out
               </button>
             ) : (
-              <Link
-                to="/signin"
-                className="bg-black text-white px-3 py-1 rounded-md text-xs"
-              >
+              <Link to="/signin" className="bg-black text-white px-4 py-1 rounded-md text-sm">
                 Sign In
               </Link>
             )}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-black"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? (
-              <FiX className="w-5 h-5" />
-            ) : (
-              <FiMenu className="w-5 h-5" />
-            )}
+          {/* ✅ Mobile Menu Button */}
+          <button className="md:hidden text-black" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
           </button>
         </div>
       </nav>
-      {/* ✅ Prevent Page Content from Being Hidden */}
-      <div className="h-[82px]"></div>{" "}
-      {/* Prevents content from hiding behind navbar */}
-      {/* ✅ Mobile Menu */}
-      <div
-        className={`fixed top-0 left-0 w-full h-full bg-white z-40 transform transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        <div className="py-5 px-6 space-y-4">
-          <Link
-            to="/"
-            className="block text-base hover:text-gray-500"
-            onClick={() => setIsOpen(false)}
-          >
-            Home
-          </Link>
-          <Link
-            to="/shop"
-            className="block text-base hover:text-gray-500"
-            onClick={() => setIsOpen(false)}
-          >
-            Shop
-          </Link>
-          <Link
-            to="/product"
-            className="block text-base hover:text-gray-500"
-            onClick={() => setIsOpen(false)}
-          >
-            Product
-          </Link>
-          <Link
-            to="/contact"
-            className="block text-base hover:text-gray-500"
-            onClick={() => setIsOpen(false)}
-          >
-            Contact Us
-          </Link>
 
-          {/* Cart & Wishlist */}
-          <div className="space-y-3">
-            <Link
-              to="/cart"
-              className="flex items-center justify-between text-base hover:text-gray-500"
-              onClick={() => setIsOpen(false)}
-            >
-              Cart{" "}
-              <span className="bg-black text-white text-xs rounded-full px-2">
-                {cartCount}
-              </span>
-            </Link>
-            <Link
-              to="/wishlist"
-              className="flex items-center justify-between text-base hover:text-gray-500"
-              onClick={() => setIsOpen(false)}
-            >
-              Wishlist{" "}
-              <span className="bg-black text-white text-xs rounded-full px-2">
-                2
-              </span>
-            </Link>
-          </div>
+      {/* 🔹 Prevent Content from Hiding Behind Navbar */}
+      <div className="h-[72px]"></div>
 
-          {/* Sign In/Out Button */}
-          {isAuthenticated ? (
-            <button
-              onClick={() => {
-                handleSignOut();
-                setIsOpen(false);
-              }}
-              className="block bg-black text-white text-center py-1 rounded-md text-sm"
-            >
-              Sign Out
+      {/* 🔹 Mobile Menu */}
+      {isOpen && (
+        <div className="fixed top-0 left-0 w-full h-full bg-white z-40 transition-transform duration-300">
+          <div className="p-6">
+            <button onClick={() => setIsOpen(false)} className="absolute top-4 right-6 text-black">
+              <FiX className="w-6 h-6" />
             </button>
-          ) : (
-            <Link
-              to="/signin"
-              className="block bg-black text-white text-center py-1 rounded-md text-sm"
-              onClick={() => setIsOpen(false)}
-            >
-              Sign In
-            </Link>
-          )}
+
+            {/* 🔹 Mobile Links */}
+            <nav className="flex flex-col space-y-4 mt-10">
+              <Link to="/" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Home</Link>
+              <Link to="/shop" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Shop</Link>
+              <Link to="/product" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Product</Link>
+              <Link to="/contact" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Contact Us</Link>
+
+              {/* 🔹 Cart & Wishlist */}
+              <div className="space-y-3">
+                <Link to="/cart" className="flex justify-between items-center text-lg" onClick={() => setIsOpen(false)}>
+                  Cart
+                  <span className="bg-black text-white text-xs rounded-full px-2">{cartCount}</span>
+                </Link>
+                <Link to="/wishlist" className="flex justify-between items-center text-lg" onClick={() => setIsOpen(false)}>
+                  Wishlist
+                  <span className="bg-black text-white text-xs rounded-full px-2">2</span>
+                </Link>
+              </div>
+
+              {/* 🔑 Authentication Button */}
+              {isAuthenticated ? (
+                <button
+                  onClick={() => {
+                    localStorage.removeItem("token");
+                    localStorage.removeItem("userId");
+                    setIsAuthenticated(false);
+                    navigate("/signin");
+                  }}
+                  className="w-full bg-black text-white py-2 rounded-md mt-4 text-lg"
+                >
+                  Sign Out
+                </button>
+              ) : (
+                <Link
+                  to="/signin"
+                  className="w-full text-center bg-black text-white py-2 rounded-md mt-4 text-lg"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Sign In
+                </Link>
+              )}
+            </nav>
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }

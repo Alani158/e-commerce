@@ -26,11 +26,15 @@ const ProductDetails = () => {
   const userId = localStorage.getItem("userId"); // Assuming user ID is stored in local storage
 
   const handleAddToCart = () => {
-    const cart = JSON.parse(localStorage.getItem(`cart_${userId}`)) || [];
+    const userId = localStorage.getItem("userId") || "guest"; // Fallback for non-logged-in users
+    const cartKey = `cart_${userId}`;
+  
+    let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+  
     const existingProductIndex = cart.findIndex(
       (item) => item.productId === product.id
     );
-
+  
     if (existingProductIndex !== -1) {
       cart[existingProductIndex].quantity += val;
     } else {
@@ -42,11 +46,11 @@ const ProductDetails = () => {
         price: Number(product.price),
       });
     }
-
-    localStorage.setItem(`cart_${userId}`, JSON.stringify(cart));
+  
+    localStorage.setItem(cartKey, JSON.stringify(cart));
     alert("Product added to cart");
   };
-
+  
   if (!product) {
     return <div className="text-center text-red-500">Product not found</div>;
   }
