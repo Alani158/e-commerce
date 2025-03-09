@@ -59,8 +59,14 @@ const Cart = () => {
   const total = subtotal + shipping;
 
   return (
+
     <div>
       <Navbar />
+      
+      
+              <a href="/shopnow" className="text-sm text-blue-500  hover:underline">
+                Back 
+              </a>
       <div className="w-[80%] mx-auto mt-10">
         <h2 className="text-3xl font-bold text-center mb-6"> Cart</h2>
 
