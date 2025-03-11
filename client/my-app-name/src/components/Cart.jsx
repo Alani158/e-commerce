@@ -59,7 +59,7 @@ const Cart = () => {
         {/* ✅ Back to Shop Button */}
         <button 
           onClick={handleBackToShop} 
-          className=" text-black px-4 py-2 rounded-md mb-6  transition"
+          className="bg-gray-200 text-black px-4 py-2 rounded-md mb-6 hover:bg-gray-300 transition"
         >
           ← Back to Shop
         </button>
@@ -166,7 +166,7 @@ const Cart = () => {
 
               {/* ✅ Shipping Options */}
               <div className="space-y-3">
-              <label className="flex items-center space-x-2">
+                <label className="flex items-center space-x-2">
                   <input
                     type="radio"
                     name="shipping"
@@ -185,16 +185,6 @@ const Cart = () => {
                     onChange={() => setShipping(15)}
                   />
                   <span>Express Shipping (+$15.00)</span>
-                </label>
-                <label className="flex items-center space-x-2">
-                  <input
-                    type="radio"
-                    name="shipping"
-                    value="21"
-                    checked={shipping === 21}
-                    onChange={() => setShipping(21)}
-                  />
-                  <span>Pick Up ($21.00)</span>
                 </label>
               </div>
 
