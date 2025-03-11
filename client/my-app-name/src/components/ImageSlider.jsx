@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Custom Icons
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
 
 const ImageSlider = () => {
-  const [swiperInstance, setSwiperInstance] = useState(null); // Store Swiper instance
+  const [swiperInstance, setSwiperInstance] = useState(null);
 
   const images = [
     "ImageSlider1.png",
@@ -15,8 +15,7 @@ const ImageSlider = () => {
   ];
 
   return (
-
-    <div className="relative sm:w-[150vh]  mx-auto   w-[150vh] sm:mx-auto">
+    <div className="relative w-full  max-w-[1000px]  sm:left-0 left-9 sm:max-w-[1300px] mx-auto">
       {/* Swiper Component */}
       <Swiper
         modules={[Navigation]}
@@ -25,7 +24,7 @@ const ImageSlider = () => {
           nextEl: ".custom-next",
           prevEl: ".custom-prev",
         }}
-        onSwiper={(swiper) => setSwiperInstance(swiper)} // Capture Swiper instance
+        onSwiper={(swiper) => setSwiperInstance(swiper)}
         className="rounded-lg shadow-lg"
       >
         {images.map((image, index) => (
@@ -33,7 +32,7 @@ const ImageSlider = () => {
             <img
               src={image}
               alt={`Slide ${index + 1}`}
-              className="sm:w-full h-80 mx-auto   object-cover rounded-lg"
+              className="w-full h-[400px] object-cover rounded-lg"
             />
           </SwiperSlide>
         ))}
@@ -42,13 +41,13 @@ const ImageSlider = () => {
       {/* Custom Navigation Buttons */}
       <button
         className="custom-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-200 transition z-10"
-        onClick={() => swiperInstance?.slidePrev()} // Manually trigger previous slide
+        onClick={() => swiperInstance?.slidePrev()}
       >
         <FaChevronLeft className="text-gray-800 text-xl" />
       </button>
       <button
         className="custom-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg hover:bg-gray-200 transition z-10"
-        onClick={() => swiperInstance?.slideNext()} // Manually trigger next slide
+        onClick={() => swiperInstance?.slideNext()}
       >
         <FaChevronRight className="text-gray-800 text-xl" />
       </button>

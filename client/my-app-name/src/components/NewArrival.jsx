@@ -4,7 +4,7 @@ import { newAarrival } from "../index/products";
 // import products from "../index/products";
 const NewArrivals = () => {
   return (
-    <div className="w-[180vh]  mx-auto px-4  py-10">
+    <div className="w-[90%]  mx-auto px-4  py-10">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
         <div className="">
