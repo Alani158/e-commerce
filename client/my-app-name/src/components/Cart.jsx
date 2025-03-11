@@ -12,6 +12,7 @@ const Cart = () => {
 
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem(`cart_${userId}`)) || [];
+    console.log("Stored Cart:", storedCart); // Debugging
     setCart(storedCart);
   }, [userId]);
 
@@ -166,7 +167,7 @@ const Cart = () => {
 
               {/* ✅ Shipping Options */}
               <div className="space-y-3">
-              <label className="flex items-center space-x-2">
+                <label className="flex items-center space-x-2">
                   <input
                     type="radio"
                     name="shipping"
@@ -221,9 +222,8 @@ const Cart = () => {
         )}
       </div>
 
-      
-      <Newsletter/>
-      <Footer/>
+      <Newsletter />
+      <Footer />
     </div>
   );
 };

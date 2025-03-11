@@ -27,7 +27,7 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/shopnow" element={<ShopNow />} />
         <Route path="/product/:id" element={<ProductDetails />} />
-        <Route path="/cart " element={<Cart />} />
+        <Route path="/cart" element={<Cart />} /> {/* Removed extra space */}
         <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </Router>
