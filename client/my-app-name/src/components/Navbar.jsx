@@ -37,16 +37,16 @@ function Navbar() {
     <>
       <nav className="w-full bg-white shadow-md fixed top-0 left-0 z-50 h-[80px]  items-center">
         <div className="w-full ">
-          <div className="w-[50vh] justify-self-center space-x-6 flex  ">
+          <div className="w-[50vh] justify-self-center space-x-6 flex  mx-auto  sm:text-lg  text-sm ">
             <div className=" flex space-x-2 ">
-              <img src="cut.png" alt="" className="w-4 h-4 relative top-1 " />
-              <div className=" space-x-1 flex text-lg ">
+              <img src="cut.png" alt="" className="sm:w-4 sm:h-4  sm:block hidden relative top-1 " />
+              <div className=" space-x-1 flex ">
                 <p>30% storewide</p>
                 <p>-Limited</p>
               </div>
             </div>
-            <div className="">
-              <a href="/" className="text-sm text-blue-500  hover:underline">
+            <div className=" ">
+              <a href="/" className="text-xs sm:text-sm  text-blue-500  hover:underline">
                 Shop Now →
               </a>
             </div>

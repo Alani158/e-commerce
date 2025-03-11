@@ -14,7 +14,7 @@ const HeroBanner = () => {
       </div>
 
       {/* Right Side - Text Section */}
-      <div className="sm:w-1/2 h-[400px] w-full md:pl-12 text-center bg-gray-50 p-14 md:text-left ">
+      <div className="sm:w-1/2 h-[340px] w-full md:pl-12 text-center bg-gray-50 p-14 md:text-left ">
         <p className="text-sm text-blue-600 font-semibold">
           SALE UP TO 35% OFF
         </p>
@@ -29,7 +29,7 @@ const HeroBanner = () => {
         {/* Shop Now Button */}
         <a
           href="#"
-          className="inline-block mt-6 px-6 py-3  text-black text-sm font-semibold rounded-lg hover:bg-gray-800 transition"
+          className="inline-block mt-0 sm:mt-6 px-6 py-3  text-black text-xs  sm:text-sm font-semibold rounded-lg hover:bg-gray-800 transition"
         >
           Shop Now →
         </a>
