@@ -33,7 +33,7 @@ function Newsletter() {
       </div>
 
       {/* ✅ Mobile Version (Text-Only) */}
-      <div className="bg-gray-100 py-10 px-4 w-full flex flex-col items-center block md:hidden">
+      <div className="bg-gray-100 py-10 px-4 w-full flex flex-col items-center  md:hidden">
         <h2 className="text-xl font-semibold text-gray-900 text-center">
           Join Our Newsletter
         </h2>

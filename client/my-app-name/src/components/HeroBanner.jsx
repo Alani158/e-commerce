@@ -10,15 +10,15 @@ const HeroBanner = () => {
         <img
           src="LivingRoom2.png" // Replace with actual image URL
           alt="Living Room"
-          className="w-full  sm:h-[50vh] h-[60vh] rounded-lg"
+          className="w-full  h-[50vh] rounded-lg"
         />
       </div>
 
       {/* Right Side - Text Section */}
-      <div className="md:w-1/2  w-full md:pl-12 text-center bg-gray-50 p-20 md:text-left mt-6 md:mt-0">
-        <p className="sm:text-sm text-2xl  text-blue-600 font-semibold">SALE UP TO 35% OFF</p>
+      <div className="md:w-1/2 w-full md:pl-12 text-center bg-gray-50 p-20 md:text-left mt-6 md:mt-0">
+        <p className="text-sm text-blue-600 font-semibold">SALE UP TO 35% OFF</p>
         <h1 className="text-3xl md:text-4xl font-bold mt-2">HUNDREDS of <br /> New lower prices!</h1>
-        <p className="text-gray-600  text-2xl mt-4">
+        <p className="text-gray-600 mt-4">
           It’s more affordable than ever to give every room in your home a stylish makeover.
         </p>
         
