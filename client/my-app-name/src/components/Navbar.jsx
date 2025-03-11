@@ -35,7 +35,7 @@ function Navbar() {
 
   return (
     <>
-  <nav className="w-full bg-white shadow-md fixed top-0 left-0 z-50 h-[80px]  items-center">
+      <nav className="w-full bg-white shadow-md fixed top-0 left-0 z-50 h-[80px]  items-center">
         <div className="w-full ">
           <div className="w-[50vh] justify-self-center space-x-6 flex  ">
             <div className=" flex space-x-2 ">
@@ -58,8 +58,8 @@ function Navbar() {
             <img src={elegant} alt="Logo" className="w-16 h-8" />
           </Link>
 
- {/* Desktop Menu */}
- <div className="hidden md:flex space-x-6 text-sm">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-6 text-sm">
             <Link to="/" className="hover:text-gray-500">
               Home
             </Link>
@@ -74,11 +74,6 @@ function Navbar() {
             </Link>
           </div>
 
-
-
-
-
-    
           {/* ✅ Icons */}
           <div className="hidden md:flex items-center space-x-4 relative">
             {/* 🛒 Cart Icon */}
@@ -113,15 +108,25 @@ function Navbar() {
                 Sign Out
               </button>
             ) : (
-              <Link to="/signin" className="bg-black text-white px-4 py-1 rounded-md text-sm">
+              <Link
+                to="/signin"
+                className="bg-black text-white px-4 py-1 rounded-md text-sm"
+              >
                 Sign In
               </Link>
             )}
           </div>
 
           {/* ✅ Mobile Menu Button */}
-          <button className="md:hidden text-black" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
+          <button
+            className="md:hidden text-black"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? (
+              <FiX className="w-6 h-6" />
+            ) : (
+              <FiMenu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </nav>
@@ -133,26 +138,65 @@ function Navbar() {
       {isOpen && (
         <div className="fixed top-0 left-0 w-full h-full bg-white z-40 transition-transform duration-300">
           <div className="p-6">
-            <button onClick={() => setIsOpen(false)} className="absolute top-4 right-6 text-black">
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-4 right-6 text-black"
+            >
               <FiX className="w-6 h-6" />
             </button>
 
             {/* 🔹 Mobile Links */}
             <nav className="flex flex-col relative sm:top-0 top-5   space-y-12  mt-10">
-              <Link to="/" className="sm:text-lg  text-4xl font-medium" onClick={() => setIsOpen(false)}>Home</Link>
-              <Link to="/shop" className="sm:text-lg text-4xl  font-medium" onClick={() => setIsOpen(false)}>Shop</Link>
-              <Link to="/product" className="sm:text-lg  text-4xl font-medium" onClick={() => setIsOpen(false)}>Product</Link>
-              <Link to="/contact" className="sm:text-lg  text-4xl font-medium" onClick={() => setIsOpen(false)}>Contact Us</Link>
+              <Link
+                to="/"
+                className="sm:text-lg  text-4xl font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                to="/shop"
+                className="sm:text-lg text-4xl  font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Shop
+              </Link>
+              <Link
+                to="/product"
+                className="sm:text-lg  text-4xl font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Product
+              </Link>
+              <Link
+                to="/contact"
+                className="sm:text-lg  text-4xl font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact Us
+              </Link>
 
               {/* 🔹 Cart & Wishlist */}
               <div className="space-y-10 ">
-                <Link to="/cart" className="flex justify-between items-center  text-4xl  sm:text-lg" onClick={() => setIsOpen(false)}>
+                <Link
+                  to="/cart"
+                  className="flex justify-between items-center  text-4xl  sm:text-lg"
+                  onClick={() => setIsOpen(false)}
+                >
                   Cart
-                  <span className="bg-black text-white text-xs rounded-full px-2">{cartCount}</span>
+                  <span className="bg-black text-white text-xs rounded-full px-2">
+                    {cartCount}
+                  </span>
                 </Link>
-                <Link to="/wishlist" className="flex justify-between items-center  text-4xl  sm:text-lg" onClick={() => setIsOpen(false)}>
+                <Link
+                  to="/wishlist"
+                  className="flex justify-between items-center  text-4xl  sm:text-lg"
+                  onClick={() => setIsOpen(false)}
+                >
                   Wishlist
-                  <span className="bg-black text-white text-xs rounded-full px-2">2</span>
+                  <span className="bg-black text-white text-xs rounded-full px-2">
+                    2
+                  </span>
                 </Link>
               </div>
 
