@@ -8,14 +8,10 @@ import "swiper/css/navigation";
 const ImageSlider = () => {
   const [swiperInstance, setSwiperInstance] = useState(null);
 
-  const images = [
-    "ImageSlider1.png",
-    "image2.png",
-    "image4.png",
-  ];
+  const images = ["ImageSlider1.png", "image2.png", "image4.png"];
 
   return (
-    <div className="relative  w-full lg:w-[170vh]    mx-auto">
+    <div className="relative  w-full    mx-auto">
       {/* Swiper Component */}
       <Swiper
         modules={[Navigation]}

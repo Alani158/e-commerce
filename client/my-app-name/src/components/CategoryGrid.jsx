@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const CategoryGrid = () => {
   return (
-    <div className="sm:w-[180vh]   w-[150vh] mx-auto  px-4 py-10">
+    <div className="w-[90%] mx-auto  px-4 py-10">
       {/* Parent Grid Layout */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {/* Living Room - Full Width on Mobile */}
@@ -15,14 +15,17 @@ const CategoryGrid = () => {
           />
           <div className="absolute top-4 left-4">
             <h3 className="text-lg font-semibold">Living Room</h3>
-            <Link to="/shopnow" className="text-gray-600 text-sm hover:underline">
+            <Link
+              to="/shopnow"
+              className="text-gray-600 text-sm hover:underline"
+            >
               Shop Now →
             </Link>
           </div>
         </div>
 
         {/* Bedroom & Kitchen - Stacked in One Column */}
-      
+
         {/* Bedroom & Kitchen - Stacked in One Column */}
         <div className="grid grid-rows-2 gap-4">
           {/* Bedroom */}
@@ -34,7 +37,10 @@ const CategoryGrid = () => {
             />
             <div className="absolute top-4 left-4">
               <h3 className="text-sm font-semibold">Bedroom</h3>
-              <Link to="/shopnow" className="text-gray-600 text-xs hover:underline">
+              <Link
+                to="/shopnow"
+                className="text-gray-600 text-xs hover:underline"
+              >
                 Shop Now →
               </Link>
             </div>
@@ -48,8 +54,11 @@ const CategoryGrid = () => {
             />
             <div className="absolute top-4 left-4">
               <h3 className="text-sm font-semibold">Kitchen</h3>
-              <Link to="/shopnow" className="text-gray-600 text-xs hover:underline">
-              Shop Now →
+              <Link
+                to="/shopnow"
+                className="text-gray-600 text-xs hover:underline"
+              >
+                Shop Now →
               </Link>
             </div>
           </div>
