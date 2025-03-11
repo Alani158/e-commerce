@@ -3,7 +3,7 @@ import { articles } from "../index/products";
 
 const Articles = () => {
   return (
-    <div className=" sm:w-[180vh] w-[150vh] mx-auto px-6 py-12">
+    <div className=" w-[90%] mx-auto px-6 py-12">
       {/* Header */}
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-3xl font-bold">Articles</h2>

@@ -1,5 +1,10 @@
 import React from "react";
-import { FaShippingFast, FaMoneyCheck, FaLock, FaHeadset } from "react-icons/fa"; // Ensure you have react-icons installed
+import {
+  FaShippingFast,
+  FaMoneyCheck,
+  FaLock,
+  FaHeadset,
+} from "react-icons/fa"; // Ensure you have react-icons installed
 
 const features = [
   {
@@ -30,7 +35,7 @@ const features = [
 
 const FeatureSection = () => {
   return (
-    <div className=" sm:w-[180vh] w-[140vh]  mx-auto px-6 py-10">
+    <div className=" w-[90%]  mx-auto px-6 py-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {features.map((feature) => (
           <div
