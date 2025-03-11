@@ -138,19 +138,19 @@ function Navbar() {
             </button>
 
             {/* 🔹 Mobile Links */}
-            <nav className="flex flex-col space-y-4 mt-10">
-              <Link to="/" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Home</Link>
-              <Link to="/shop" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Shop</Link>
-              <Link to="/product" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Product</Link>
-              <Link to="/contact" className="text-lg font-medium" onClick={() => setIsOpen(false)}>Contact Us</Link>
+            <nav className="flex flex-col relative sm:top-0 top-5   space-y-12  mt-10">
+              <Link to="/" className="sm:text-lg  text-4xl font-medium" onClick={() => setIsOpen(false)}>Home</Link>
+              <Link to="/shop" className="sm:text-lg text-4xl  font-medium" onClick={() => setIsOpen(false)}>Shop</Link>
+              <Link to="/product" className="sm:text-lg  text-4xl font-medium" onClick={() => setIsOpen(false)}>Product</Link>
+              <Link to="/contact" className="sm:text-lg  text-4xl font-medium" onClick={() => setIsOpen(false)}>Contact Us</Link>
 
               {/* 🔹 Cart & Wishlist */}
-              <div className="space-y-3">
-                <Link to="/cart" className="flex justify-between items-center text-lg" onClick={() => setIsOpen(false)}>
+              <div className="space-y-10 ">
+                <Link to="/cart" className="flex justify-between items-center  text-4xl  sm:text-lg" onClick={() => setIsOpen(false)}>
                   Cart
                   <span className="bg-black text-white text-xs rounded-full px-2">{cartCount}</span>
                 </Link>
-                <Link to="/wishlist" className="flex justify-between items-center text-lg" onClick={() => setIsOpen(false)}>
+                <Link to="/wishlist" className="flex justify-between items-center  text-4xl  sm:text-lg" onClick={() => setIsOpen(false)}>
                   Wishlist
                   <span className="bg-black text-white text-xs rounded-full px-2">2</span>
                 </Link>
@@ -165,14 +165,14 @@ function Navbar() {
                     setIsAuthenticated(false);
                     navigate("/signin");
                   }}
-                  className="w-full bg-black text-white py-2 rounded-md mt-4 text-lg"
+                  className="w-full bg-black text-white py-2 rounded-md mt-4 text-4xl sm:text-lg"
                 >
                   Sign Out
                 </button>
               ) : (
                 <Link
                   to="/signin"
-                  className="w-full text-center bg-black text-white py-2 rounded-md mt-4 text-lg"
+                  className="w-full text-center bg-black text-white py-2 rounded-md mt-4 text-4xl  sm:text-lg"
                   onClick={() => setIsOpen(false)}
                 >
                   Sign In
