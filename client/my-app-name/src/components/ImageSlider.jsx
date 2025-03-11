@@ -15,7 +15,7 @@ const ImageSlider = () => {
   ];
 
   return (
-    <div className="relative w-full  max-w-[1000px]  sm:left-0 left-9 sm:max-w-[1300px] mx-auto">
+    <div className="relative w-full   sm:max-w-[1300px] mx-auto">
       {/* Swiper Component */}
       <Swiper
         modules={[Navigation]}

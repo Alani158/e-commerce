@@ -142,7 +142,7 @@ const Cart = () => {
                     </div>
 
                     {/* ✅ Price (Above Remove Button on Mobile) */}
-                    <div className="text-right relative sm:top-0  -top-20">
+                    <div className="text-right relative lg:top-0  md:-top-20  -top-20">
                       <p className="text-md font-semibold">${Number(item.price).toFixed(2)}</p>
                       <button
                         onClick={() => handleRemove(item.productId)}
