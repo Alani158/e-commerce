@@ -14,7 +14,7 @@ const HeroBanner = () => {
       </div>
 
       {/* Right Side - Text Section */}
-      <div className="sm:w-1/2 sm:h-[360px]  h-[340px] w-full md:pl-12 text-center bg-gray-50 p-14  md:text-left ">
+      <div className="sm:w-1/2 sm:h-[360px] pt-8 lg:p-14  h-[340px] w-full md:pl-12 text-center bg-gray-50  md:text-left ">
         <p className="text-sm text-blue-600 font-semibold">
           SALE UP TO 35% OFF
         </p>
