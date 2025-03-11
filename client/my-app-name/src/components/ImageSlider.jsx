@@ -11,7 +11,7 @@ const ImageSlider = () => {
   const images = ["ImageSlider1.png", "image2.png", "image4.png"];
 
   return (
-    <div className="relative  w-full    mx-auto">
+    <div className="relative sm:w-full    mx-auto">
       {/* Swiper Component */}
       <Swiper
         modules={[Navigation]}
@@ -28,7 +28,7 @@ const ImageSlider = () => {
             <img
               src={image}
               alt={`Slide ${index + 1}`}
-              className="w-full h-[400px] object-cover rounded-lg"
+              className="  h-[15rem] sm:w-full  sm:h-[400px] object-cover rounded-lg"
             />
           </SwiperSlide>
         ))}
