@@ -30,7 +30,7 @@ const features = [
 
 const FeatureSection = () => {
   return (
-    <div className="sm:w-[180vh] w-[80%]  mx-auto px-6 py-10">
+    <div className=" sm:w-[180vh] w-[140vh]  mx-auto px-6 py-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {features.map((feature) => (
           <div
