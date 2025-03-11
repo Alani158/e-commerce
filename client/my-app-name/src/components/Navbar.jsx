@@ -40,7 +40,7 @@ function Navbar() {
           <div className="w-[50vh] justify-self-center space-x-6 flex  ">
             <div className=" flex space-x-2 ">
               <img src="cut.png" alt="" className="w-4 h-4 relative top-1 " />
-              <div className=" space-x-1 flex">
+              <div className=" space-x-1 flex text-lg ">
                 <p>30% storewide</p>
                 <p>-Limited</p>
               </div>

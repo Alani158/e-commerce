@@ -1,63 +1,53 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { Link } from "react-router-dom";
 
 const CategoryGrid = () => {
   return (
-    <div className="w-[160vh] mx-auto px-4 py-10">
+    <div className="sm:w-[150vh]  md:w-[180vh] w-[160vh] mx-auto  px-4 py-10">
       {/* Parent Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Left Side - Living Room (Large Section) */}
-        <div className="relative bg-gray-100 rounded-lg p-6 flex justify-center items-center">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        {/* Living Room - Full Width on Mobile */}
+        <div className="relative bg-gray-100 rounded-lg p-6 flex flex-col items-center">
           <img
-            src="LivingRoom.png" // Replace with actual image
+            src="LivingRoom.png"
             alt="Living Room"
-            className="w-full h-auto object-cover rounded-lg"
+            className="w-full max-w-xs h-auto object-contain rounded-lg"
           />
           <div className="absolute top-4 left-4">
             <h3 className="text-lg font-semibold">Living Room</h3>
-            {/* Fix: Use Link instead of <a href="#"> */}
-            <Link
-              to="/shopnow"
-              className="text-gray-600 text-sm hover:underline"
-            >
+            <Link to="/shopnow" className="text-gray-600 text-sm hover:underline">
               Shop Now →
             </Link>
           </div>
         </div>
 
-        {/* Right Side - Bedroom & Kitchen (Stacked Grid) */}
+        {/* Bedroom & Kitchen - Stacked in One Column */}
         <div className="grid grid-rows-2 gap-4">
           {/* Bedroom */}
-          <div className="relative bg-gray-100 rounded-lg p-4 flex justify-center items-center">
+          <div className="relative bg-gray-100 rounded-lg p-4 flex flex-col items-center">
             <img
-              src="image3.png" // Replace with actual image
+              src="image3.png"
               alt="Bedroom"
-              className="w-full h-auto object-cover rounded-lg"
+              className="w-full max-w-xs h-auto object-contain rounded-lg"
             />
             <div className="absolute top-4 left-4">
               <h3 className="text-sm font-semibold">Bedroom</h3>
-              <Link
-                to="/shopnow"
-                className="text-gray-600 text-xs hover:underline"
-              >
+              <Link to="/shopnow" className="text-gray-600 text-xs hover:underline">
                 Shop Now →
               </Link>
             </div>
           </div>
 
           {/* Kitchen */}
-          <div className="relative bg-gray-100 rounded-lg p-4 flex justify-center items-center border border-gray-300">
+          <div className="relative bg-gray-100 rounded-lg p-4 flex flex-col items-center border border-gray-300">
             <img
-              src="Kitchen.png" // Replace with actual image
+              src="Kitchen.png"
               alt="Kitchen"
-              className="w-full h-auto object-cover rounded-lg"
+              className="w-full max-w-xs h-auto object-contain rounded-lg"
             />
             <div className="absolute top-4 left-4">
               <h3 className="text-sm font-semibold">Kitchen</h3>
-              <Link
-                to="/shopnow"
-                className="text-gray-600 text-xs hover:underline"
-              >
+              <Link to="/shopnow" className="text-gray-600 text-xs hover:underline">
                 Shop Now →
               </Link>
             </div>
