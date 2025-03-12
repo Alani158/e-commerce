@@ -4,7 +4,7 @@ import { articles } from "../index/products";
 const Articles = () => {
   return (
     <div className=" w-[90%] mx-auto px-6 py-12">
-      {/* Header */}
+      
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-3xl font-bold">Articles</h2>
         <a
@@ -29,7 +29,7 @@ const Articles = () => {
             {/* Article Title */}
             <h3 className="mt-4 text-lg font-semibold">{article.title}</h3>
 
-            {/* Read More Link */}
+      
             <a
               href={article.link}
               className="mt-2 text-sm text-gray-600 font-medium hover:underline"
