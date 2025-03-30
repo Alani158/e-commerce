@@ -28,7 +28,7 @@ const HeroBanner = () => {
 
         {/* Shop Now Button */}
         <a
-          href="#"
+          href="/"
           className="inline-block mt-0 sm:mt-6 px-6 py-3  text-black text-xs  sm:text-sm font-semibold rounded-lg hover:bg-gray-800 transition"
         >
           Shop Now →
