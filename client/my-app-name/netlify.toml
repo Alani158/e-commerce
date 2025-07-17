@@ -1,0 +1,12 @@
+[build]
+  base = "client/my-app-name"
+  publish = "client/my-app-name/build"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18.20.2" # or another LTS version your project supports
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
