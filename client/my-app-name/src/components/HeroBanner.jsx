@@ -9,6 +9,7 @@ const HeroBanner = () => {
         <img
           src="LivingRoom2.png" // Replace with actual image URL
           alt="Living Room"
+          loading="lazy"
           className="w-full sm:h-[330px] rounded-lg"
         />
       </div>

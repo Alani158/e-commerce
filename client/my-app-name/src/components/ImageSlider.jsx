@@ -8,7 +8,7 @@ import "swiper/css/navigation";
 const ImageSlider = () => {
   const [swiperInstance, setSwiperInstance] = useState(null);
 
-  const images = ["ImageSlider1.png", "image2.png", "image4.png"];
+  const images = ["ImageSlider1.webp", "image2.webp", "image4.webp"];
 
   return (
     <div className="relative sm:w-full    mx-auto">
