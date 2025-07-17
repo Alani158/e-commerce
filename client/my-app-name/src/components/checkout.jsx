@@ -12,10 +12,6 @@ export default function Checkout() {
     navigate("/");
   };
 
-  const handlebackCart = () => {
-    navigate("/cart");
-  };
-
   return (
     <div className="w-full mx-auto pt-0">
       <Navbar />
