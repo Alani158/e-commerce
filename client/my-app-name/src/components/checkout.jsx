@@ -23,10 +23,10 @@ export default function Checkout() {
             Thank you for your order! Your order has been placed successfully.
           </h1>
           <div
-            className="w-[50%] sm:w-[40%] mt-6 border border-black shadow-md  hover:p-2 transition-all   bg-black justify-self-center flex justify-center items-center rounded-lg cursor-pointer"
+            className="w-[50%] sm:w-[40%] mt-6 border border-black shadow-md  mx-auto hover:p-2 transition-all   bg-black   rounded-lg cursor-pointer"
             onClick={handleContinueShopping}
           >
-            <button className="text-white py-2 sm:text-2xl">
+            <button className="text-white py-2 mx-auto sm:text-2xl">
               Continue shopping
             </button>
           </div>
