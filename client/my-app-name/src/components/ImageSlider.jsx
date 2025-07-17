@@ -28,7 +28,8 @@ const ImageSlider = () => {
             <img
               src={image}
               alt={`Slide ${index + 1}`}
-              className="  h-[15rem] w-full  sm:h-[400px] object-cover rounded-lg"
+              loading="lazy"
+              className="h-[15rem] w-full sm:h-[400px] object-cover rounded-lg"
             />
           </SwiperSlide>
         ))}
