@@ -39,27 +39,34 @@ function Navbar() {
         <div className="w-full ">
           <div className="w-[50vh] justify-self-center space-x-6 flex  mx-auto  sm:text-lg  text-sm ">
             <div className=" flex space-x-2 ">
-              <img src="cut.png" alt="" className="sm:w-4 sm:h-4  sm:block hidden relative top-1 " />
-              <div className=" space-x-1 flex ">
+              {/* <img
+                src="cut.png"
+                alt=""
+                className="sm:w-4 sm:h-4  sm:block hidden relative top-1 "
+              /> */}
+              {/* <div className=" space-x-1 flex ">
                 <p>30% storewide</p>
                 <p>-Limited</p>
-              </div>
+              </div> */}
             </div>
             <div className=" ">
-              <a href="/" className="text-xs sm:text-sm  text-blue-500  hover:underline">
+              {/* <a
+                href="/"
+                className="text-xs sm:text-sm  text-blue-500  hover:underline"
+              >
                 Shop Now →
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
-        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
+        <div className="max-w-full pt-5 mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
           {/* Logo */}
           <Link to="/">
             <img src={elegant} alt="Logo" className="w-16 h-8" />
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6 text-sm">
+          <div className="hidden md:flex space-x-6 text-sm sm:text-lg">
             <Link to="/" className="hover:text-gray-500">
               Home
             </Link>
