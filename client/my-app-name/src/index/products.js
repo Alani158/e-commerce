@@ -1,9 +1,9 @@
-import basket from "../images/basket.png";
-import bulb from "../images/bulb.png";
-import lamp from "../images/lamp.png";
-import image3 from "../images/image3.png";
-import chair from "../images/chair.png";
-import kitchen from "../images/Kitchen.png";
+import basket from "../images/basket.webp";
+import bulb from "../images/bulb.webp";
+import lamp from "../images/lamp.webp";
+import image3 from "../images/image3.webp";
+import chair from "../images/chair.webp";
+import kitchen from "../images/Kitchen.webp";
 const reviewcount = 11;
 const review = "item is prolly one of my best buys so far ";
 
@@ -205,19 +205,19 @@ const articles = [
   {
     id: 1,
     title: "7 ways to decorate your home",
-    image: "image1.png", // Replace with actual image URL
+    image: "image1.webp", // Replace with actual image URL
     link: "#",
   },
   {
     id: 2,
     title: "Kitchen organization",
-    image: "image2.png", // Replace with actual image URL
+    image: "image2.webp", // Replace with actual image URL
     link: "#",
   },
   {
     id: 3,
     title: "Decor your bedroom",
-    image: "image4.png", // Replace with actual image URL
+    image: "image4.webp", // Replace with actual image URL
     link: "#",
   },
 ];

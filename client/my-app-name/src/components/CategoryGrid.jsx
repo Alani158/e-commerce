@@ -9,7 +9,7 @@ const CategoryGrid = () => {
         {/* Living Room - Full Width on Mobile */}
         <div className="relative bg-gray-100 rounded-lg p-6 flex flex-col items-center">
           <img
-            src="LivingRoom.png"
+            src="LivingRoom.webp"
             alt="Living Room"
             className="w-full max-w-xs h-auto object-contain rounded-lg"
           />
@@ -31,7 +31,7 @@ const CategoryGrid = () => {
           {/* Bedroom */}
           <div className="relative bg-gray-100 rounded-lg p-4 flex flex-col items-center">
             <img
-              src="image3.png"
+              src="image3.webp"
               alt="Bedroom"
               className="w-full max-w-xs h-auto object-contain rounded-lg"
             />
@@ -48,7 +48,7 @@ const CategoryGrid = () => {
 
           <div className="relative bg-gray-100 rounded-lg p-4 flex flex-col items-center border border-gray-300">
             <img
-              src="Kitchen.png"
+              src="Kitchen.webp"
               alt="Kitchen"
               className="w-full max-w-xs h-auto object-contain rounded-lg"
             />

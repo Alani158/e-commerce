@@ -1,5 +1,5 @@
 import React from "react";
-import newsletter from "../images/newsletter.png";
+import newsletter from "../images/newsletter.webp";
 
 function Newsletter() {
   return (

@@ -7,7 +7,7 @@ const HeroBanner = () => {
 
       <div className="w-full sm:w-[60%]">
         <img
-          src="LivingRoom2.png" // Replace with actual image URL
+          src="LivingRoom2.webp" // Replace with actual image URL
           alt="Living Room"
           loading="lazy"
           className="w-full sm:h-[330px] rounded-lg"
