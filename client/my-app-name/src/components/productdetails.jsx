@@ -23,8 +23,6 @@ const ProductDetails = () => {
     setVal(val - 1);
   };
 
-  const userId = localStorage.getItem("userId"); // Assuming user ID is stored in local storage
-
   const handleAddToCart = () => {
     const userId = localStorage.getItem("userId") || "guest"; // Fallback for non-logged-in users
     const cartKey = `cart_${userId}`;
